@@ -4,6 +4,7 @@
     <list default="true" id="e8c4cd79-e171-4865-ac00-66a2484d8a18" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/readme1" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stepsovc-deploy/pom.xml" afterPath="$PROJECT_DIR$/stepsovc-deploy/pom.xml" />
     </list>
     <ignored path="stepsovc-motech-delivery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,10 +62,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stepsovc-deploy/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="0" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.2062635">
               <folding />
             </state>
           </provider>
@@ -90,7 +109,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/operate.xml" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/properties/showcase/deploy.properties" />
-        <option value="$PROJECT_DIR$/stepsovc-deploy/pom.xml" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/deploy.xml" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/properties/qa/stepsovc.properties" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/properties/showcase/stepsovc.properties" />
@@ -99,6 +117,7 @@
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/properties/qa/postgresql.properties" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/properties/ci/stepsovc.properties" />
         <option value="$PROJECT_DIR$/stepsovc-deploy/src/main/resources/properties/ci/deploy.properties" />
+        <option value="$PROJECT_DIR$/stepsovc-deploy/pom.xml" />
       </list>
     </option>
   </component>
@@ -111,7 +130,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="1072" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -399,8 +418,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1680" height="1072" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -416,7 +435,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24938725" sideWeight="0.67051417" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24938725" sideWeight="0.67051417" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -484,6 +503,20 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stepsovc-deploy/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.2062635">
           <folding />
         </state>
       </provider>
