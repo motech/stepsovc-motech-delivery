@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="stepsovc-delivery-config" default="setup.box">
+    <typedef file="ant/config-macros.xml"/>
+    <typedef file="org/motechproject/build/operationMacroDefs.xml"/>
+
+
+    <target name="start.services">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
+        <start.postgres />
+        <start.couch.db couch.db.port="${couch.db.port}" />
+    </target>
+
+    <target name="stop.services">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
+        <stop.couch.db couch.db.port="${couch.db.port}" />
+        <stop.postgres />
+    </target>
+
+</project>

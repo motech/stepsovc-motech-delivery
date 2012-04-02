@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="stepsovc-delivery-config" default="setup.box">
+    <typedef file="ant/config-macros.xml"/>
+    <typedef file="org/motechproject/build/deployMacroDefs.xml"/>
+
+
+    <target name="deploy.stepsovc.from.hudson">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
+        <stop.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+        <download.app.from.remote
+                app.name="${app.name}"
+                remote.location="http://${hudson.server}:${hudson.port}/job/${hudson.job.name}/${hudson.build.number}/org.motechproject.${app.name}$$${app.name}-web/artifact/org.motechproject.${app.name}/${app.name}-web/${hudson.release.version}/${app.name}-web-${hudson.release.version}.war"
+                download.dir="${download.dir}"/>
+
+        <copy.app.war.to.tomcat
+                tomcat.home="${tomcat.home}"
+                app.name="${app.name}"
+                download.dir="${download.dir}"/>
+
+        <start.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+        <copy.over.properties/>
+
+
+        <set.hudson.version
+                tomcat.home="${tomcat.home}"
+                app.name="${app.name}"
+                hudson.release.version="${hudson.release.version}"
+                hudson.build.number="${hudson.build.number}"/>
+
+        <restart.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+    </target>
+
+    <target name="deploy.stepsovc.from.nexus">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
+        <stop.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+        <download.app.from.remote
+                app.name="${app.name}"
+                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/releases/org/motechproject/ananya/ananya-web/${nexus.release.version}/ananya-web-${nexus.release.version}.war"
+                download.dir="${download.dir}"/>
+
+        <copy.app.war.to.tomcat
+                tomcat.home="${tomcat.home}"
+                app.name="${app.name}"
+                download.dir="${download.dir}"/>
+
+        <start.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+        <copy.over.properties/>
+
+        <set.nexus.version
+                tomcat.home="${tomcat.home}"
+                app.name="${app.name}"
+                nexus.server="${nexus.server}"
+                nexus.release.version="${nexus.release.version}"/>
+
+        <restart.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+    </target>
+
+    <macrodef name="copy.over.properties">
+        <sequential>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/couchdb.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/log4j.xml"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/activemq.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/ananya.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/osgi.properties"/>
+        </sequential>
+    </macrodef>
+
+</project>
