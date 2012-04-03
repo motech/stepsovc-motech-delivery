@@ -46,7 +46,7 @@
 
         <download.app.from.remote
                 app.name="${app.name}"
-                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/releases/org/motechproject/ananya/ananya-web/${nexus.release.version}/ananya-web-${nexus.release.version}.war"
+                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/releases/org/motechproject/stepsovc/stepsovc-web/${nexus.release.version}/stepsovc-web-${nexus.release.version}.war"
                 download.dir="${download.dir}"/>
 
         <copy.app.war.to.tomcat
