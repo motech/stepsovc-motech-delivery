@@ -7,8 +7,10 @@
     <groupId>stepsovc-motech-delivery</groupId>
     <artifactId>stepsovc-motech-delivery</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>0.1-SNAPSHOT</version>
+    <name>Stepsovc Delivery</name>
     <modules>
         <module>stepsovc-deploy</module>
     </modules>
 </project>
+
