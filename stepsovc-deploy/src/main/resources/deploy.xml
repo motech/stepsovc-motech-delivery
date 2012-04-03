@@ -12,7 +12,7 @@
 
         <download.app.from.remote
                 app.name="${app.name}"
-                remote.location="http://${hudson.server}:${hudson.port}/job/${hudson.job.name}/${hudson.build.number}/org.motechproject.${app.name}$$${app.name}-web/artifact/org.motechproject.${app.name}/${app.name}-web/${hudson.release.version}/${app.name}-web-${hudson.release.version}.war"
+                remote.location="http://${hudson.server}:${hudson.port}/job/${hudson.job.name}/${hudson.build.number}/org.wv.${app.name}$$${app.name}-web/artifact/org.wv.${app.name}/${app.name}-web/${hudson.release.version}/${app.name}.war"
                 download.dir="${download.dir}"/>
 
         <copy.app.war.to.tomcat
