@@ -81,7 +81,7 @@
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
                   file="${basedir}/properties/${env}/activemq.properties"/>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
-                  file="${basedir}/properties/${env}/ananya.properties"/>
+                  file="${basedir}/properties/${env}/stepsovc.properties"/>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
                   file="${basedir}/properties/${env}/osgi.properties"/>
         </sequential>
