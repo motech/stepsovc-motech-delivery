@@ -1,0 +1,841 @@
+{
+   "_id": "71f577a6e2f9ae94f156e510253dff14",
+   "_rev": "94-75165223570d305d780c5ef2d7878aa8",
+   "multimedia_map": {
+   },
+   "profile": {
+   },
+   "domain": "stepovc",
+   "cloudcare_enabled": false,
+   "recipients": "",
+   "short_url": null,
+   "translations": {
+   },
+   "text_input": "roman",
+   "built_on": null,
+   "built_with": {
+       "doc_type": "BuildRecord",
+       "build_number": null,
+       "signed": true,
+       "datetime": null,
+       "version": null,
+       "latest": null
+   },
+   "copy_of": null,
+   "application_version": "1.0",
+   "langs": [
+       "en"
+   ],
+   "build_comment": null,
+   "doc_type": "Application",
+   "build_signed": true,
+   "user_registration": {
+       "doc_type": "UserRegistrationForm",
+       "xmlns": null,
+       "name": {
+       },
+       "password_path": "password",
+       "show_count": false,
+       "validation_cache": null,
+       "actions": {
+           "doc_type": "FormActions",
+           "update_case": {
+               "doc_type": "UpdateCaseAction",
+               "update": {
+               },
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           },
+           "close_referral": {
+               "doc_type": "FormAction",
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           },
+           "open_referral": {
+               "name_path": null,
+               "doc_type": "OpenReferralAction",
+               "followup_date": null,
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           },
+           "open_case": {
+               "name_path": null,
+               "doc_type": "OpenCaseAction",
+               "external_id": null,
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           },
+           "update_referral": {
+               "doc_type": "UpdateReferralAction",
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               },
+               "followup_date": null
+           },
+           "referral_preload": {
+               "preload": {
+               },
+               "doc_type": "PreloadAction",
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           },
+           "case_preload": {
+               "preload": {
+               },
+               "doc_type": "PreloadAction",
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           },
+           "close_case": {
+               "doc_type": "FormAction",
+               "condition": {
+                   "answer": null,
+                   "doc_type": "FormActionCondition",
+                   "type": "never",
+                   "question": null
+               }
+           }
+       },
+       "username_path": "username",
+       "requires": "none",
+       "unique_id": null,
+       "data_paths": {
+       }
+   },
+   "force_http": false,
+   "use_custom_suite": false,
+   "modules": [
+       {
+           "doc_type": "Module",
+           "name": {
+               "en": "New Referral"
+           },
+           "referral_list": {
+               "doc_type": "CaseList",
+               "show": false,
+               "label": {
+               }
+           },
+           "media_image": null,
+           "case_label": {
+               "en": "Cases"
+           },
+           "case_list": {
+               "doc_type": "CaseList",
+               "show": false,
+               "label": {
+               }
+           },
+           "forms": [
+               {
+                   "doc_type": "Form",
+                   "xmlns": "http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900",
+                   "name": {
+                       "en": "New Referral Form"
+                   },
+                   "media_image": null,
+                   "validation_cache": "",
+                   "requires": "case",
+                   "actions": {
+                       "update_case": {
+                           "update": {
+                               "new_diagnosis": "/data/new_diagnosis",
+                               "condoms": "/data/condoms",
+                               "other_health_services": "/data/other_health_services",
+                               "family_planning": "/data/family_planning",
+                               "hiv_counseling": "/data/hiv_counseling",
+                               "followup_date": "/data/other_details/followup_date",
+                               "end-of-life_hospice": "/data/end-of-life_hospice",
+                               "art_adherence_counseling": "/data/art_adherence_counseling",
+                               "visit_date": "/data/other_details/visit_date",
+                               "followup_required": "/data/other_details/followup_required",
+                               "sexually_transmitted_infection": "/data/sexually_transmitted_infection",
+                               "service_provider": "/data/service_provider",
+                               "service_date": "/data/service_date",
+                               "pmctc": "/data/pmctc",
+                               "pain_management": "/data/pain_management"
+                           },
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "always"
+                           }
+                       },
+                       "close_referral": {
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       },
+                       "open_referral": {
+                           "name_path": null,
+                           "followup_date": null,
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       },
+                       "open_case": {
+                           "name_path": null,
+                           "external_id": null,
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       },
+                       "update_referral": {
+                           "followup_date": null,
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       },
+                       "referral_preload": {
+                           "preload": {
+                           },
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       },
+                       "case_preload": {
+                           "preload": {
+                           },
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       },
+                       "close_case": {
+                           "condition": {
+                               "answer": null,
+                               "question": null,
+                               "type": "never"
+                           }
+                       }
+                   },
+                   "show_count": false,
+                   "media_audio": null,
+                   "unique_id": "ec34c1e887f1bc0d9c6d1f9f54b217b8205af9c6"
+               }
+           ],
+           "case_type": "beneficiary",
+           "details": [
+               {
+                   "doc_type": "Detail",
+                   "type": "case_short",
+                   "columns": [
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Beneficiary Code"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "beneficiary_code",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Beneficiary Name"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "beneficiary_name",
+                           "model": "case",
+                           "advanced": ""
+                       }
+                   ]
+               },
+               {
+                   "doc_type": "Detail",
+                   "type": "case_long",
+                   "columns": [
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Beneficiary Code"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "beneficiary_code",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Title"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "title",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Beneficiary Name"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "beneficiary_name",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Sex"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "sex",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Beneficiary Dob"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "beneficiary_dob",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Receiving Organization"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "receiving_organization",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Caregiver Id"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "caregiver_id",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Caregiver Name"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "caregiver_name",
+                           "model": "case",
+                           "advanced": ""
+                       }
+                   ]
+               },
+               {
+                   "doc_type": "Detail",
+                   "type": "ref_short",
+                   "columns": [
+                   ]
+               },
+               {
+                   "doc_type": "Detail",
+                   "type": "ref_long",
+                   "columns": [
+                   ]
+               }
+           ],
+           "referral_label": {
+               "en": "Referrals"
+           },
+           "media_audio": null,
+           "put_in_root": true
+       },
+       {
+           "doc_type": "Module",
+           "name": {
+               "en": "Update Referral"
+           },
+           "referral_list": {
+               "doc_type": "CaseList",
+               "show": false,
+               "label": {
+               }
+           },
+           "media_image": null,
+           "case_label": {
+               "en": "Cases"
+           },
+           "case_list": {
+               "doc_type": "CaseList",
+               "show": false,
+               "label": {
+               }
+           },
+           "forms": [
+               {
+                   "doc_type": "Form",
+                   "xmlns": "http://openrosa.org/formdesigner/B64DD00D-B133-4768-B6DB-4C2B4C1F34F1",
+                   "name": {
+                       "en": "Update Referral Form"
+                   },
+                   "media_image": null,
+                   "validation_cache": "",
+                   "requires": "case",
+                   "actions": {
+                       "update_case": {
+                           "update": {
+                               "end-of-life_hospice_na_reason": "/data/question7/end-of-life_hospice_na_reason",
+                               "art_adherence_na_reason": "/data/question7/art_adherence_na_reason",
+                               "sexually_transmitted_na_reason": "/data/question7/sexually_transmitted_na_reason",
+                               "other_health_service_na_reason": "/data/question7/other_health_service_na_reason",
+                               "family_planning_na_reason": "/data/question7/family_planning_na_reason",
+                               "new_diagnosis_na_reason": "/data/question7/new_diagnosis_na_reason",
+                               "condoms_na_reason": "/data/question7/condoms_na_reason",
+                               "pain_management_na_reason": "/data/question7/pain_management_na_reason",
+                               "hiv_counseling_na_reason": "/data/question7/hiv_counseling_na_reason",
+                               "pmtct_na_reason": "/data/question7/pmtct_na_reason"
+                           },
+                           "condition": {
+                               "answer": null,
+                               "type": "always",
+                               "question": null
+                           }
+                       },
+                       "close_referral": {
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           }
+                       },
+                       "open_referral": {
+                           "name_path": null,
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           },
+                           "followup_date": null
+                       },
+                       "open_case": {
+                           "name_path": null,
+                           "external_id": null,
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           }
+                       },
+                       "update_referral": {
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           },
+                           "followup_date": null
+                       },
+                       "referral_preload": {
+                           "preload": {
+                           },
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           }
+                       },
+                       "case_preload": {
+                           "preload": {
+                           },
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           }
+                       },
+                       "close_case": {
+                           "condition": {
+                               "answer": null,
+                               "type": "never",
+                               "question": null
+                           }
+                       }
+                   },
+                   "show_count": false,
+                   "media_audio": null,
+                   "unique_id": "cfab0322538fe964f61db872ad8411cefbe7962d"
+               }
+           ],
+           "case_type": "beneficiary",
+           "details": [
+               {
+                   "doc_type": "Detail",
+                   "type": "case_short",
+                   "columns": [
+                       {
+                           "filter_xpath": "",
+                           "field": "beneficiary_code",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Beneficiary Code"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "beneficiary_name",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Beneficiary Name"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       }
+                   ]
+               },
+               {
+                   "doc_type": "Detail",
+                   "type": "case_long",
+                   "columns": [
+                       {
+                           "filter_xpath": "",
+                           "field": "beneficiary_code",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Beneficiary Code"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "title",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Title"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "beneficiary_name",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Beneficiary Name"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "sex",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Sex"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "receiving_organization",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Receiving Organization"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "beneficiary_dob",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Beneficiary Dob"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "caregiver_id",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Caregiver Id"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "field": "caregiver_name",
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "header": {
+                               "en": "Caregiver Name"
+                           },
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "New diagnosis / pre-ART enrollment, CD4 test"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "new_diagnosis",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "End-of-life hospice/hospital admission"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "end-of-life_hospice",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "HIV counseling and testing"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "hiv_counseling",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Family Planning"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "family_planning",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Sexually transmitted infection"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "sexually_transmitted_infection",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Art Adherence Counseling"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "art_adherence_counseling",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Pain Management"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "pain_management",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "PMCTC"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "pmctc",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Condoms"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "condoms",
+                           "model": "case",
+                           "advanced": ""
+                       },
+                       {
+                           "filter_xpath": "",
+                           "header": {
+                               "en": "Other Health Services"
+                           },
+                           "late_flag": 30,
+                           "format": "plain",
+                           "enum": {
+                           },
+                           "field": "other_health_services",
+                           "model": "case",
+                           "advanced": ""
+                       }
+                   ]
+               },
+               {
+                   "doc_type": "Detail",
+                   "type": "ref_short",
+                   "columns": [
+                   ]
+               },
+               {
+                   "doc_type": "Detail",
+                   "type": "ref_long",
+                   "columns": [
+                   ]
+               }
+           ],
+           "referral_label": {
+               "en": "Referrals"
+           },
+           "media_audio": null,
+           "put_in_root": true
+       }
+   ],
+   "name": "STEPS-OVC Caregiver",
+   "version": 52,
+   "admin_password_charset": "n",
+   "admin_password": null,
+   "build_spec": {
+       "doc_type": "BuildSpec",
+       "version": "1.3.0",
+       "build_number": null,
+       "latest": true
+   },
+   "show_user_registration": false,
+   "success_message": {
+       "en": ""
+   }
+}
