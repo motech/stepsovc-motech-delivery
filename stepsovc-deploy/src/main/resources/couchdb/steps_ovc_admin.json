@@ -1,9 +1,9 @@
 {
    "_id": "71f577a6e2f9ae94f156e510253cc584",
-   "_rev": "12-67433d2feab0be5f780277fb53c10429",
-   "multimedia_map": {
-   },
+   "_rev": "21-508a088e52a853180e1b85e1de9fd356",
    "profile": {
+   },
+   "multimedia_map": {
    },
    "domain": "stepovc",
    "cloudcare_enabled": false,
@@ -62,13 +62,13 @@
            "open_referral": {
                "name_path": null,
                "doc_type": "OpenReferralAction",
-               "followup_date": null,
                "condition": {
                    "answer": null,
                    "doc_type": "FormActionCondition",
                    "type": "never",
                    "question": null
-               }
+               },
+               "followup_date": null
            },
            "open_case": {
                "name_path": null,
@@ -83,13 +83,13 @@
            },
            "update_referral": {
                "doc_type": "UpdateReferralAction",
+               "followup_date": null,
                "condition": {
                    "answer": null,
                    "doc_type": "FormActionCondition",
                    "type": "never",
                    "question": null
-               },
-               "followup_date": null
+               }
            },
            "referral_preload": {
                "preload": {
@@ -123,11 +123,11 @@
                }
            }
        },
-       "username_path": "username",
+       "data_paths": {
+       },
        "requires": "none",
        "unique_id": null,
-       "data_paths": {
-       }
+       "username_path": "username"
    },
    "force_http": false,
    "use_custom_suite": false,
@@ -137,21 +137,21 @@
            "name": {
                "en": "Beneficiary Registration"
            },
-           "referral_list": {
-               "doc_type": "CaseList",
-               "show": false,
-               "label": {
-               }
-           },
-           "media_image": null,
            "case_label": {
                "en": "Cases"
            },
+           "media_image": null,
+           "referral_list": {
+               "doc_type": "CaseList",
+               "label": {
+               },
+               "show": false
+           },
            "case_list": {
                "doc_type": "CaseList",
-               "show": false,
                "label": {
-               }
+               },
+               "show": false
            },
            "forms": [
                {
@@ -160,9 +160,9 @@
                    "name": {
                        "en": "Registration"
                    },
+                   "media_audio": null,
                    "media_image": null,
                    "validation_cache": "",
-                   "requires": "none",
                    "actions": {
                        "update_case": {
                            "update": {
@@ -172,6 +172,7 @@
                                "receiving_organization": "/data/beneficiary_information/receiving_organization",
                                "caregiver_name": "/data/caregiver_information/caregiver_name",
                                "sex": "/data/beneficiary_information/sex",
+                               "form_type": "/data/form_type",
                                "beneficiary_code": "/data/beneficiary_information/beneficiary_code",
                                "caregiver_id": "/data/caregiver_information/caregiver_id"
                            },
@@ -241,7 +242,7 @@
                        }
                    },
                    "show_count": false,
-                   "media_audio": null,
+                   "requires": "none",
                    "unique_id": "c635d0febdea9c30dc81334086450e7177df01ef"
                }
            ],
@@ -280,7 +281,7 @@
        }
    ],
    "name": "STEPS-OVC Admin",
-   "version": 8,
+   "version": 13,
    "admin_password_charset": "n",
    "admin_password": null,
    "build_spec": {

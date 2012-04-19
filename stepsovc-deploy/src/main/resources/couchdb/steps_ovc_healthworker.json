@@ -1,6 +1,6 @@
 {
    "_id": "71f577a6e2f9ae94f156e510253dfc59",
-   "_rev": "148-5bd1bf97044961512121c44f25e5a77b",
+   "_rev": "154-ee2c835c884b92d9b50d3acb2e936c36",
    "profile": {
    },
    "multimedia_map": {
@@ -175,6 +175,7 @@
                                "art_adherence_counseling": "/data/art_adherence_counseling",
                                "visit_date": "/data/other_details/visit_date",
                                "sexually_transmitted_infection": "/data/sexually_transmitted_infection",
+                               "form_type": "/data/form_type",
                                "service_details": "/data/other_details/service_details",
                                "service_provider": "/data/service_provider",
                                "service_date": "/data/service_date",
@@ -183,50 +184,50 @@
                            },
                            "condition": {
                                "answer": null,
-                               "type": "always",
-                               "question": null
+                               "question": null,
+                               "type": "always"
                            }
                        },
                        "close_referral": {
                            "condition": {
                                "answer": null,
-                               "type": "never",
-                               "question": null
+                               "question": null,
+                               "type": "never"
                            }
                        },
                        "open_referral": {
                            "name_path": null,
+                           "followup_date": null,
                            "condition": {
                                "answer": null,
-                               "type": "never",
-                               "question": null
-                           },
-                           "followup_date": null
+                               "question": null,
+                               "type": "never"
+                           }
                        },
                        "open_case": {
                            "name_path": null,
                            "external_id": null,
                            "condition": {
                                "answer": null,
-                               "type": "never",
-                               "question": null
+                               "question": null,
+                               "type": "never"
                            }
                        },
                        "update_referral": {
+                           "followup_date": null,
                            "condition": {
                                "answer": null,
-                               "type": "never",
-                               "question": null
-                           },
-                           "followup_date": null
+                               "question": null,
+                               "type": "never"
+                           }
                        },
                        "referral_preload": {
                            "preload": {
                            },
                            "condition": {
                                "answer": null,
-                               "type": "never",
-                               "question": null
+                               "question": null,
+                               "type": "never"
                            }
                        },
                        "case_preload": {
@@ -244,15 +245,15 @@
                            },
                            "condition": {
                                "answer": null,
-                               "type": "always",
-                               "question": null
+                               "question": null,
+                               "type": "always"
                            }
                        },
                        "close_case": {
                            "condition": {
                                "answer": null,
-                               "type": "never",
-                               "question": null
+                               "question": null,
+                               "type": "never"
                            }
                        }
                    },
@@ -504,7 +505,7 @@
        }
    ],
    "name": "STEPS-OVC Healthworker",
-   "version": 71,
+   "version": 74,
    "admin_password_charset": "n",
    "admin_password": null,
    "build_spec": {
