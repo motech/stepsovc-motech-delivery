@@ -1,6 +1,6 @@
 {
    "_id": "71f577a6e2f9ae94f156e510253dfc59",
-   "_rev": "154-ee2c835c884b92d9b50d3acb2e936c36",
+   "_rev": "157-18a59f3080bd4e7e60a11f5043b7a231",
    "profile": {
    },
    "multimedia_map": {
@@ -505,7 +505,7 @@
        }
    ],
    "name": "STEPS-OVC Healthworker",
-   "version": 74,
+   "version": 75,
    "admin_password_charset": "n",
    "admin_password": null,
    "build_spec": {

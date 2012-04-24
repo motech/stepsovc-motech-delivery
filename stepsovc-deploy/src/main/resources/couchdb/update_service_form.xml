@@ -41,7 +41,7 @@
                     <is_pmctc_na/>
                     <is_condoms_na/>
                     <is_new_diagnosis_na/>
-                    <form_type>custom_update</form_type>
+                    <form_type>update_service</form_type>
                 </data>
             </instance>
             <bind nodeset="/data/received_services"/>
