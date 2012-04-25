@@ -24,7 +24,7 @@ for doc_file_name in *.json; do
 		attach_url="$url/$attachment$rev"
 		echo $attach_url
 		type=$(cat $doc_file_name | jsawk 'return this._attachments["'$attachment'"].content_type')
-		revno=$(curl -v -X PUT $attach_url --data-binary @$attachment -H "Content-Type: $type" | grep { | jsawk 'return this.rev')
+		revno=$(curl -v -X PUT $attach_url --data-binary @${doc_file_name:0:${#doc_file_name}-5}/$attachment -H "Content-Type: $type" | grep { | jsawk 'return this.rev')
 		rev="?rev=$revno"
 	done
 	rev=""
