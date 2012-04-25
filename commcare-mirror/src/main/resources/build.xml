@@ -12,7 +12,7 @@
     </target>
 
    <target name="mirror.commcare.db" depends="change.permission">
-       <exec executable="./couchmirror/push.sh"></exec>
+       <exec executable="./push.sh"></exec>
    </target>
 
 </project>
