@@ -7,7 +7,7 @@
     <target name="change.permission">
         <exec executable="chmod">
             <arg value="777"/>
-            <arg value="./couchmirror/push.sh"/>
+            <arg value="./push.sh"/>
         </exec>
     </target>
 
