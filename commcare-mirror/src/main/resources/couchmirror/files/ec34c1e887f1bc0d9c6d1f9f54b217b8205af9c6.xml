@@ -1,0 +1,195 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Referral Form</h:title>
+		<model>
+			<instance>
+                <data xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1"
+                      version="1" name="New Referral Form">
+					<referred_services/>
+					<service_provider/>
+					<service_date/>
+					<other_details>
+						<visit_date/>
+						<service_details/>
+						<followup_required/>
+						<followup_date/>
+					</other_details>
+					<other_health_services/>
+					<end-of-life_hospice/>
+					<hiv_counseling/>
+					<family_planning/>
+					<sexually_transmitted_infection/>
+					<art_adherence_counseling/>
+					<pain_management/>
+					<pmctc/>
+					<condoms/>
+					<new_diagnosis/>
+					<form_type>new_referral</form_type>
+				</data>
+			</instance>
+			<bind nodeset="/data/referred_services"/>
+			<bind nodeset="/data/service_provider" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt = today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/other_details"/>
+			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt = today()" jr:constraintMsg="jr:itext('visit_date-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/other_details/service_details" type="xsd:string"/>
+			<bind nodeset="/data/other_details/followup_required"/>
+			<bind nodeset="/data/other_details/followup_date" type="xsd:date" constraint=". &gt = today()" relevant="/data/other_details/followup_required = 'yes'"/>
+			<bind nodeset="/data/other_health_services" calculate="if(selected(/data/referred_services,'other_health_services'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/end-of-life_hospice" calculate="if(selected(/data/referred_services,'end-of-life_hospice'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/hiv_counseling" calculate="if(selected(/data/referred_services,'hiv_counseling'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/family_planning" calculate="if(selected(/data/referred_services,'family_planning'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/sexually_transmitted_infection" calculate="if(selected(/data/referred_services,'sexually_transmitted_infection'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/art_adherence_counseling" calculate="if(selected(/data/referred_services,'art_adherence_counseling'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/pain_management" calculate="if(selected(/data/referred_services,'pain_management'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/pmctc" calculate="if(selected(/data/referred_services,'pmctc'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/condoms" calculate="if(selected(/data/referred_services,'condoms'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/new_diagnosis" type="xsd:string" required="true()" calculate="if(selected(/data/referred_services,'new_diagnosis'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/form_type" type="xsd:string"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="referred_services-label">
+						<value>Refer Services</value>
+					</text>
+					<text id="referred_services-new_diagnosis-label">
+						<value>New diagnosis / pre-ART enrollment, CD4 test</value>
+					</text>
+					<text id="referred_services-end-of-life_hospice-label">
+						<value>End-of-life hospice/hospital admission</value>
+					</text>
+					<text id="referred_services-hiv_counseling-label">
+						<value>HIV counseling and testing</value>
+					</text>
+					<text id="referred_services-family_planning-label">
+						<value>Family Planning</value>
+					</text>
+					<text id="referred_services-sexually_transmitted_infection-label">
+						<value>Sexually transmitted infection</value>
+					</text>
+					<text id="referred_services-art_adherence_counseling-label">
+						<value>ART adherence counseling</value>
+					</text>
+					<text id="referred_services-pain_management-label">
+						<value>Pain Management</value>
+					</text>
+					<text id="referred_services-pmtct-label">
+						<value>PMTCT</value>
+					</text>
+					<text id="referred_services-condoms-label">
+						<value>Condoms</value>
+					</text>
+					<text id="referred_services-other_health_services-label">
+						<value>Other Health Service or health education</value>
+					</text>
+					<text id="service_provider-label">
+						<value>Service Provider*</value>
+					</text>
+					<text id="service_date-label">
+						<value>Service Date*</value>
+					</text>
+					<text id="service_date-constraintMsg">
+						<value>Service date cannot be in past</value>
+					</text>
+					<text id="other_details-label">
+						<value>Other Details</value>
+					</text>
+					<text id="visit_date-label">
+						<value>Visit Date*</value>
+					</text>
+					<text id="visit_date-constraintMsg">
+						<value>Visit date cannot be in future</value>
+					</text>
+					<text id="service_details-label">
+						<value>Service Details</value>
+					</text>
+					<text id="followup_date-label">
+						<value>Followup Date</value>
+					</text>
+					<text id="followup_required-label">
+						<value>Followup Required</value>
+					</text>
+					<text id="followup_required-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="followup_required-no-label">
+						<value>No</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<select ref="/data/referred_services">
+			<label ref="jr:itext('referred_services-label')"/>
+			<item>
+				<label ref="jr:itext('referred_services-new_diagnosis-label')"/>
+				<value>new_diagnosis</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-end-of-life_hospice-label')"/>
+				<value>end-of-life_hospice</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-hiv_counseling-label')"/>
+				<value>hiv_counseling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-family_planning-label')"/>
+				<value>family_planning</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-sexually_transmitted_infection-label')"/>
+				<value>sexually_transmitted_infection</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-art_adherence_counseling-label')"/>
+				<value>art_adherence_counseling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-pain_management-label')"/>
+				<value>pain_management</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-pmtct-label')"/>
+				<value>pmtct</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-condoms-label')"/>
+				<value>condoms</value>
+			</item>
+			<item>
+				<label ref="jr:itext('referred_services-other_health_services-label')"/>
+				<value>other_health_services</value>
+			</item>
+		</select>
+		<input ref="/data/service_provider">
+			<label ref="jr:itext('service_provider-label')"/>
+		</input>
+		<input ref="/data/service_date">
+			<label ref="jr:itext('service_date-label')"/>
+		</input>
+		<group ref="/data/other_details">
+			<label ref="jr:itext('other_details-label')"/>
+			<input ref="/data/other_details/visit_date">
+				<label ref="jr:itext('visit_date-label')"/>
+			</input>
+			<input ref="/data/other_details/service_details">
+				<label ref="jr:itext('service_details-label')"/>
+			</input>
+			<select1 ref="/data/other_details/followup_required">
+				<label ref="jr:itext('followup_required-label')"/>
+				<item>
+					<label ref="jr:itext('followup_required-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('followup_required-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/other_details/followup_date">
+				<label ref="jr:itext('followup_date-label')"/>
+			</input>
+		</group>
+	</h:body>
+</h:html>

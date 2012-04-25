@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="commcare-mirror" default="setup.box">
+    <typedef file="ant/config-macros.xml"/>
+    <typedef file="org/motechproject/build/deployMacroDefs.xml"/>
+
+
+    <target name="change.permission">
+        <exec executable="cmd">
+            <arg value="chmod"/>
+            <arg value="777"/>
+            <arg value="./couchmirror/push.sh"/>
+        </exec>
+    </target>
+
+   <target name="mirror.commcare.db" depends="change.permission">
+       <exec executable="./couchmirror/push.sh"></exec>
+   </target>
+
+</project>
