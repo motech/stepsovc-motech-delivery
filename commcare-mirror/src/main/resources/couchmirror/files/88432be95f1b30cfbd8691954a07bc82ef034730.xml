@@ -1,10 +1,9 @@
-<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
 		<h:title>Update Services Form</h:title>
 		<model>
 			<instance>
-                <data xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1"
-                      version="1" name="Update Services Form">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="Update Services Form">
 					<received_services/>
 					<service_provider/>
 					<service_date/>

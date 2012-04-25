@@ -1,10 +1,9 @@
-<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
 		<h:title>Registration</h:title>
 		<model>
 			<instance>
-                <data xmlns="http://openrosa.org/formdesigner/A6E4F029-A971-41F1-80C1-9DDD5CC24571" uiVersion="1"
-                      version="1" name="Registration">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/A6E4F029-A971-41F1-80C1-9DDD5CC24571" uiVersion="1" version="1" name="Registration">
 					<beneficiary_information>
 						<beneficiary_name/>
 						<beneficiary_code/>
