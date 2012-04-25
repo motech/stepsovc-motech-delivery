@@ -11,6 +11,7 @@
     <name>Stepsovc Delivery</name>
     <modules>
         <module>stepsovc-deploy</module>
+        <module>commcare-mirror</module>
     </modules>
 </project>
 
