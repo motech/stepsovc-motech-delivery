@@ -1,6 +1,6 @@
 IFS=";"
 export IFS
-cd files
+cd test
 rev=""
 for doc_file_name in *.json; do
         url="http://localhost:5984/commcarehq/${doc_file_name:0:${#doc_file_name}-5}"
