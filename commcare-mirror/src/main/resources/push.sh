@@ -1,7 +1,8 @@
 IFS=";"
 export IFS
-cd test
+cd files
 rev=""
+
 for doc_file_name in *.json; do
         url="http://localhost:5984/commcarehq/${doc_file_name:0:${#doc_file_name}-5}"
 	attachments=$(cat $doc_file_name | jsawk 'attachments=""; for(key in this._attachments)attachments+=key+";"; return attachments')
