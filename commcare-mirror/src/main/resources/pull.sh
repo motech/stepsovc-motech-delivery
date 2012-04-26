@@ -8,13 +8,12 @@ for id in $ids; do
 	doc=$(curl $url)
 	attachments=$(echo $doc | jsawk 'attachments=""; for(key in this._attachments) attachments+=key+";"; return attachments')
 	for attachment in $attachments; do
-		if [ ! -d "$id" ];
+		if [ ! -d "files/$id" ];
 		then
 			mkdir files/$id
 		fi
 		attach_url="http://localhost:5984/commcarehq/$id/$attachment"
-		attach_doc=$(curl $attach_url)
-		echo $attach_doc > files/$id/$attachment
+		curl $attach_url > files/$id/$attachment
 	done
 	echo $doc > files/$id.json
 done

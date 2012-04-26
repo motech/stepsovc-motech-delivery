@@ -28,12 +28,12 @@
 			</instance>
 			<bind nodeset="/data/referred_services"/>
 			<bind nodeset="/data/service_provider" type="xsd:string" required="true()"/>
-			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt = today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" required="true()"/>
 			<bind nodeset="/data/other_details"/>
-			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt = today()" jr:constraintMsg="jr:itext('visit_date-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('visit_date-constraintMsg')" required="true()"/>
 			<bind nodeset="/data/other_details/service_details" type="xsd:string"/>
 			<bind nodeset="/data/other_details/followup_required"/>
-			<bind nodeset="/data/other_details/followup_date" type="xsd:date" constraint=". &gt = today()" relevant="/data/other_details/followup_required = 'yes'"/>
+			<bind nodeset="/data/other_details/followup_date" type="xsd:date" constraint=". &gt;= today()" relevant="/data/other_details/followup_required = 'yes'"/>
 			<bind nodeset="/data/other_health_services" calculate="if(selected(/data/referred_services,'other_health_services'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/end-of-life_hospice" calculate="if(selected(/data/referred_services,'end-of-life_hospice'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/hiv_counseling" calculate="if(selected(/data/referred_services,'hiv_counseling'),'Referred','Not Referred')"/>
