@@ -9,10 +9,18 @@
             <arg value="777"/>
             <arg value="./push.sh"/>
         </exec>
+        <exec executable="chmod">
+            <arg value="777"/>
+            <arg value="./pull.sh"/>
+        </exec>
     </target>
 
    <target name="mirror.commcare.db" depends="change.permission">
        <exec executable="./push.sh"></exec>
+   </target>
+
+   <target name="pull.commcare.db" depends="change.permission">
+       <exec executable="./pull.sh"></exec>
    </target>
 
 </project>
