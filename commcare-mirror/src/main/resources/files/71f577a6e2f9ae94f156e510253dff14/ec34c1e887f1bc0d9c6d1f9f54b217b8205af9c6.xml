@@ -41,7 +41,7 @@
 			<bind nodeset="/data/sexually_transmitted_infection" calculate="if(selected(/data/referred_services,'sexually_transmitted_infection'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/art_adherence_counseling" calculate="if(selected(/data/referred_services,'art_adherence_counseling'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/pain_management" calculate="if(selected(/data/referred_services,'pain_management'),'Referred','Not Referred')"/>
-			<bind nodeset="/data/pmtct" calculate="if(selected(/data/referred_services,'pmctc'),'Referred','Not Referred')"/>
+			<bind nodeset="/data/pmtct" calculate="if(selected(/data/referred_services,'pmtct'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/condoms" calculate="if(selected(/data/referred_services,'condoms'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/new_diagnosis" type="xsd:string" required="true()" calculate="if(selected(/data/referred_services,'new_diagnosis'),'Referred','Not Referred')"/>
 			<bind nodeset="/data/form_type" type="xsd:string"/>

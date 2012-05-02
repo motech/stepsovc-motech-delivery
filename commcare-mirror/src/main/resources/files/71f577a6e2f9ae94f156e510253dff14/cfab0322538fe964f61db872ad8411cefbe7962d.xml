@@ -17,20 +17,31 @@
 						<other_health_service_na_reason/>
 					</not_availed_reasons>
 					<form_type>update_referral</form_type>
+					<pain_management/>
+					<end_of_life_hospice/>
+					<sexually_transmitted_infection/>
+					<art_adherence_counseling/>
+					<pmtct/>
+					<hiv_counseling/>
+					<family_planning/>
+					<other_health_services/>
+					<condoms/>
+					<new_diagnosis/>
 				</data>
 			</instance>
 			<bind nodeset="/data/not_availed_reasons"/>
-			<bind nodeset="/data/not_availed_reasons/new_diagnosis_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/end-of-life_hospice_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/hiv_counseling_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/family_planning_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/sexually_transmitted_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/art_adherence_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/pain_management_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/pmtct_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/condoms_na_reason" type="xsd:string"/>
-			<bind nodeset="/data/not_availed_reasons/other_health_service_na_reason" type="xsd:string"/>
+			<bind nodeset="/data/not_availed_reasons/new_diagnosis_na_reason" type="xsd:string" relevant="/data/new_diagnosis = 'Not Availed' or /data/new_diagnosis = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/end-of-life_hospice_na_reason" type="xsd:string" relevant="/data/end_of_life_hospice = 'Not Availed' or /data/end_of_life_hospice = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/hiv_counseling_na_reason" type="xsd:string" relevant="/data/hiv_counseling = 'Not Availed' or /data/hiv_counseling = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/family_planning_na_reason" type="xsd:string" relevant="/data/family_planning = 'Not Availed' or /data/family_planning = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/sexually_transmitted_na_reason" type="xsd:string" relevant="/data/sexually_transmitted_infection = 'Not Availed' or /data/sexually_transmitted_infection = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/art_adherence_na_reason" type="xsd:string" relevant="/data/art_adherence_counseling = 'Not Availed' or /data/art_adherence_counseling = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/pain_management_na_reason" type="xsd:string" relevant="/data/pain_management = 'Not Availed' or /data/pain_management = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/pmtct_na_reason" type="xsd:string" relevant="/data/pmtct = 'Not Availed' or /data/pmtct = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/condoms_na_reason" type="xsd:string" relevant="/data/condoms = 'Not Availed' or /data/condoms = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/other_health_service_na_reason" type="xsd:string" relevant="/data/other_health_services = 'Not Availed' or /data/other_health_services = 'Referred'"/>
 			<bind nodeset="/data/form_type" type="xsd:string"/>
+			<bind nodeset="/data/new_diagnosis" type="xsd:string"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="new_diagnosis_na_reason-label">

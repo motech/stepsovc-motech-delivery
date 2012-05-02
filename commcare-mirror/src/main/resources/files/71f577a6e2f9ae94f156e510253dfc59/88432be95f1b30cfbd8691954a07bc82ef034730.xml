@@ -12,7 +12,7 @@
 						<service_details/>
 					</other_details>
 					<other_health_services/>
-					<end-of-life_hospice/>
+					<end_of_life_hospice/>
 					<hiv_counseling/>
 					<family_planning/>
 					<sexually_transmitted_infection/>
@@ -22,7 +22,7 @@
 					<condoms/>
 					<new_diagnosis/>
 					<other_health_services_pre/>
-					<end-of-life_hospice_pre/>
+					<end_of_life_hospice_pre/>
 					<hiv_counseling_pre/>
 					<family_planning_pre/>
 					<sexually_transmitted_infection_pre/>
@@ -32,7 +32,7 @@
 					<condoms_pre/>
 					<new_diagnosis_pre/>
 					<is_other_health_services_na/>
-					<is_end-of-life_hospice_na/>
+					<is_end_of_life_hospice_na/>
 					<is_hiv_counseling_na/>
 					<is_family_planning_na/>
 					<is_sexually_transmitted_infection_na/>
@@ -51,7 +51,7 @@
 			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" required="true()"/>
 			<bind nodeset="/data/other_details/service_details" type="xsd:string"/>
 			<bind nodeset="/data/other_health_services" type="xsd:string" calculate="if(selected(/data/received_services, 'other_health_services'), 'Received', /data/is_other_health_services_na )"/>
-			<bind nodeset="/data/end-of-life_hospice" type="xsd:string" calculate="if(selected(/data/received_services, 'end-of-life_hospice'), 'Received', /data/is_end-of-life_hospice_na)"/>
+			<bind nodeset="/data/end_of_life_hospice" type="xsd:string" calculate="if(selected(/data/received_services, 'end_of_life_hospice'), 'Received', /data/is_end_of_life_hospice_na)"/>
 			<bind nodeset="/data/hiv_counseling" type="xsd:string" calculate="if(selected(/data/received_services, 'hiv_counseling'), 'Received', /data/is_hiv_counseling_na)"/>
 			<bind nodeset="/data/family_planning" type="xsd:string" calculate="if(selected(/data/received_services, 'family_planning'), 'Received', /data/is_family_planning_na)"/>
 			<bind nodeset="/data/sexually_transmitted_infection" type="xsd:string" calculate="if(selected(/data/received_services, 'sexually_transmitted_infection'), 'Received', /data/is_sexually_transmitted_infection_na)"/>
@@ -61,7 +61,7 @@
 			<bind nodeset="/data/condoms" type="xsd:string" calculate="if(selected(/data/received_services, 'condoms'), 'Received', /data/is_condoms_na)"/>
 			<bind nodeset="/data/new_diagnosis" type="xsd:string" required="true()" calculate="if(selected(/data/received_services, 'new_diagnosis'), 'Received', /data/is_new_diagnosis_na)"/>
 			<bind nodeset="/data/other_health_services_pre" type="xsd:string"/>
-			<bind nodeset="/data/end-of-life_hospice_pre" type="xsd:string"/>
+			<bind nodeset="/data/end_of_life_hospice_pre" type="xsd:string"/>
 			<bind nodeset="/data/hiv_counseling_pre" type="xsd:string"/>
 			<bind nodeset="/data/family_planning_pre" type="xsd:string"/>
 			<bind nodeset="/data/sexually_transmitted_infection_pre" type="xsd:string"/>
@@ -71,7 +71,7 @@
 			<bind nodeset="/data/condoms_pre" type="xsd:string"/>
 			<bind nodeset="/data/new_diagnosis_pre" type="xsd:string"/>
 			<bind nodeset="/data/is_other_health_services_na" type="xsd:string" calculate="if(/data/other_health_services_pre = 'Referred', 'Not Availed', /data/other_health_services_pre)"/>
-			<bind nodeset="/data/is_end-of-life_hospice_na" type="xsd:string" calculate="if(/data/end-of-life_hospice_pre = 'Referred', 'Not Availed', /data/end-of-life_hospice_pre)"/>
+			<bind nodeset="/data/is_end_of_life_hospice_na" type="xsd:string" calculate="if(/data/end_of_life_hospice_pre = 'Referred', 'Not Availed', /data/end_of_life_hospice_pre)"/>
 			<bind nodeset="/data/is_hiv_counseling_na" type="xsd:string" calculate="if(/data/hiv_counseling_pre = 'Referred', 'Not Availed', /data/hiv_counseling_pre)"/>
 			<bind nodeset="/data/is_family_planning_na" type="xsd:string" calculate="if(/data/family_planning_pre = 'Referred', 'Not Availed', /data/family_planning_pre)"/>
 			<bind nodeset="/data/is_sexually_transmitted_infection_na" type="xsd:string" calculate="if(/data/sexually_transmitted_infection_pre = 'Referred', 'Not Availed', /data/sexually_transmitted_infection_pre)"/>
@@ -147,7 +147,7 @@
 			</item>
 			<item>
 				<label ref="jr:itext('referred_services-end-of-life_hospice-label')"/>
-				<value>end-of-life_hospice</value>
+				<value>end_of_life_hospice</value>
 			</item>
 			<item>
 				<label ref="jr:itext('referred_services-hiv_counseling-label')"/>
