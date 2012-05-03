@@ -45,7 +45,7 @@
 				</data>
 			</instance>
 			<bind nodeset="/data/received_services"/>
-			<bind nodeset="/data/service_provider" type="xsd:string" required="false()"/>
+			<bind nodeset="/data/service_provider" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003' or . = 'FAC004' or . = 'FAC005' or . = 'FAC007' or . = 'FAC008' or . = 'FAC009'" jr:constraintMsg="jr:itext('service_provider-constraintMsg')" required="false()"/>
 			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" required="false()"/>
 			<bind nodeset="/data/other_details"/>
 			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" required="true()"/>
@@ -133,6 +133,9 @@
 					</text>
 					<text id="service_details-label">
 						<value>Service Details</value>
+					</text>
+					<text id="service_provider-constraintMsg">
+						<value>Service Provider ID is invalid</value>
 					</text>
 				</translation>
 			</itext>

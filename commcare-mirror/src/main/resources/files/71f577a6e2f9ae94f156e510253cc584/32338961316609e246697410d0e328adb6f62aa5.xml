@@ -1,0 +1,33 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/B96BC892-918C-4DF5-BE3E-554CA29C2F6D" uiVersion="1" version="1" name="New Form">
+					<facility_id/>
+					<facility_name/>
+				</data>
+			</instance>
+			<bind nodeset="/data/facility_id" type="xsd:string"/>
+			<bind nodeset="/data/facility_name" type="xsd:string"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="facility_id-label">
+						<value>Facility ID</value>
+					</text>
+					<text id="facility_name-label">
+						<value>Facility Name</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/facility_id">
+			<label ref="jr:itext('facility_id-label')"/>
+		</input>
+		<input ref="/data/facility_name">
+			<label ref="jr:itext('facility_name-label')"/>
+		</input>
+	</h:body>
+</h:html>
