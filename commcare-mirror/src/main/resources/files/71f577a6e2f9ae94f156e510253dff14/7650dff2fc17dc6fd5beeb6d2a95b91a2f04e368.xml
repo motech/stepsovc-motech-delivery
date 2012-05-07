@@ -1,0 +1,17 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Dummy</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/E45F3EFD-A7BE-42A6-97C2-5133E766A2AA" uiVersion="1" version="1" name="Dummy">
+					<question1/>
+				</data>
+			</instance>
+			<bind nodeset="/data/question1"/>
+			<itext>
+				<translation lang="en" default=""/>
+			</itext>
+		</model>
+	</h:head>
+	<h:body/>
+</h:html>
