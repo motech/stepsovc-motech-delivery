@@ -1,9 +1,9 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>Registration</h:title>
+		<h:title>Beneficiary Registration</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/A6E4F029-A971-41F1-80C1-9DDD5CC24571" uiVersion="1" version="1" name="Registration">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/A6E4F029-A971-41F1-80C1-9DDD5CC24571" uiVersion="1" version="1" name="Beneficiary Registration">
 					<beneficiary_information>
 						<beneficiary_name/>
 						<beneficiary_code/>
@@ -13,7 +13,7 @@
 					</beneficiary_information>
 					<title/>
 					<caregiver_information>
-						<caregiver_id/>
+						<caregiver_code/>
 						<caregiver_name/>
 					</caregiver_information>
 					<form_type>beneficiary_registration</form_type>
@@ -27,7 +27,7 @@
 			<bind nodeset="/data/beneficiary_information/sex"/>
 			<bind nodeset="/data/title"/>
 			<bind nodeset="/data/caregiver_information"/>
-			<bind nodeset="/data/caregiver_information/caregiver_id" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/caregiver_information/caregiver_code" type="xsd:string" required="true()"/>
 			<bind nodeset="/data/caregiver_information/caregiver_name" type="xsd:string" required="true()"/>
 			<bind nodeset="/data/form_type" type="xsd:string"/>
 			<itext>
@@ -68,8 +68,8 @@
 					<text id="caregiver_information-label">
 						<value>Caregiver information</value>
 					</text>
-					<text id="caregiver_id-label">
-						<value>Caregiver ID</value>
+					<text id="caregiver_code-label">
+						<value>Caregiver Code</value>
 					</text>
 					<text id="caregiver_name-label">
 						<value>Caregiver Name</value>
@@ -125,8 +125,8 @@
 		</select1>
 		<group ref="/data/caregiver_information">
 			<label ref="jr:itext('caregiver_information-label')"/>
-			<input ref="/data/caregiver_information/caregiver_id">
-				<label ref="jr:itext('caregiver_id-label')"/>
+			<input ref="/data/caregiver_information/caregiver_code">
+				<label ref="jr:itext('caregiver_code-label')"/>
 			</input>
 			<input ref="/data/caregiver_information/caregiver_name">
 				<label ref="jr:itext('caregiver_name-label')"/>
