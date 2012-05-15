@@ -1,5 +1,3 @@
-psql -U postgres -f tables_postgres.sql
-
 if [ -f stepsovc-deploy-0.1-SNAPSHOT.jar ];
 then
 	rm -f stepsovc-deploy-0.1-SNAPSHOT.jar
