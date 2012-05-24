@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <property file="../properties/migration.properties"/>
+    <path id="lib.path">
+        <fileset dir="${library.files.path}" includes="**/*.jar"/>
+    </path>
+
+    <target name="migrate.caregiver">
+        <echo message="Please Wait while the caregiver data is being imported...."/>
+        <java fork="false" classname="${main.class.name}">
+            <arg value="caregiver"/>
+            <arg value="${caregiver.file.path}"/>
+            <classpath>
+                <path location="${main.class.path}"/>
+                <path refid="lib.path"/>
+            </classpath>
+        </java>
+        <echo message="Caregiver data import is completed"/>
+    </target>
+
+    <target name="migrate.beneficiary">
+        <echo message="Please Wait while the beneficiary data is being imported...."/>
+        <java fork="false" classname="${main.class.name}">
+            <arg value="beneficiary"/>
+            <arg value="${beneficiary.csv.path}"/>
+            <classpath>
+                <path location="${main.class.path}"/>
+                <path refid="lib.path"/>
+            </classpath>
+        </java>
+        <echo message="Beneficiary data import is completed"/>
+    </target>
+
+    <target name="migrate.facility">
+        <echo message="Please Wait while the facility data is being imported...."/>
+        <java fork="false" classname="${main.class.name}">
+            <arg value="facility"/>
+            <arg value="${facility.csv.path}"/>
+            <classpath>
+                <path location="${main.class.path}"/>
+                <path refid="lib.path"/>
+            </classpath>
+        </java>
+        <echo message="Facility data import is completed"/>
+    </target>
+</project>
