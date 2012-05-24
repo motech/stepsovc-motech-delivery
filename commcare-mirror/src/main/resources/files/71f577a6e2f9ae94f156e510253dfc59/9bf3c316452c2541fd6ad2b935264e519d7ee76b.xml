@@ -1,0 +1,41 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Service Unavailability</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/FD1A4FE3-62ED-46F2-BF6C-2C5B9B0A9D9A" uiVersion="1" version="1" name="Service Unavailability">
+					<service_unavailable_from/>
+					<service_unavailable_to/>
+					<service_unavailable_reason/>
+				</data>
+			</instance>
+			<bind nodeset="/data/service_unavailable_from" type="xsd:date" constraint=". &gt;= today()" required="true()"/>
+			<bind nodeset="/data/service_unavailable_to" type="xsd:date" constraint=". &gt;= /data/service_unavailable_from" required="true()"/>
+			<bind nodeset="/data/service_unavailable_reason" type="xsd:string" required="true()"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="service_unavailable_from-label">
+						<value>Service Unavailable From Date</value>
+					</text>
+					<text id="service_unavailable_to-label">
+						<value>Service Unavailable To Date</value>
+					</text>
+					<text id="service_unavailable_reason-label">
+						<value>Service Unavailable Reason</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/service_unavailable_from">
+			<label ref="jr:itext('service_unavailable_from-label')"/>
+		</input>
+		<input ref="/data/service_unavailable_to">
+			<label ref="jr:itext('service_unavailable_to-label')"/>
+		</input>
+		<input ref="/data/service_unavailable_reason">
+			<label ref="jr:itext('service_unavailable_reason-label')"/>
+		</input>
+	</h:body>
+</h:html>

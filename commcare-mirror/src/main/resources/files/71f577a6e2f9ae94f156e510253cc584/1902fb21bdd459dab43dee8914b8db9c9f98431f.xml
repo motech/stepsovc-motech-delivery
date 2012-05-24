@@ -1,19 +1,19 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>New Form</h:title>
+		<h:title>Facility Registration</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/8F9255C2-3A1D-4B82-8346-561264CEBEA0" uiVersion="1" version="1" name="New Form">
-					<facility_id/>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/8F9255C2-3A1D-4B82-8346-561264CEBEA0" uiVersion="1" version="1" name="Facility Registration">
+					<facility_code/>
 					<facility_name/>
 				</data>
 			</instance>
-			<bind nodeset="/data/facility_id" type="xsd:string"/>
+			<bind nodeset="/data/facility_code" type="xsd:string"/>
 			<bind nodeset="/data/facility_name" type="xsd:string"/>
 			<itext>
 				<translation lang="en" default="">
-					<text id="facility_id-label">
-						<value>Facility Id</value>
+					<text id="facility_code-label">
+						<value>Facility Code</value>
 					</text>
 					<text id="facility_name-label">
 						<value>Facility Name</value>
@@ -23,8 +23,8 @@
 		</model>
 	</h:head>
 	<h:body>
-		<input ref="/data/facility_id">
-			<label ref="jr:itext('facility_id-label')"/>
+		<input ref="/data/facility_code">
+			<label ref="jr:itext('facility_code-label')"/>
 		</input>
 		<input ref="/data/facility_name">
 			<label ref="jr:itext('facility_name-label')"/>

@@ -1,11 +1,11 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>Update Services Form</h:title>
+		<h:title>Update Services</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="Update Services Form">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="Update Services">
 					<received_services/>
-					<service_provider/>
+					<facility_code/>
 					<service_date/>
 					<other_details>
 						<visit_date/>
@@ -45,8 +45,8 @@
 				</data>
 			</instance>
 			<bind nodeset="/data/received_services"/>
-			<bind nodeset="/data/service_provider" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003'" jr:constraintMsg="jr:itext('service_provider-constraintMsg')" required="false()"/>
-			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" required="false()"/>
+			<bind nodeset="/data/facility_code" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003'" jr:constraintMsg="jr:itext('facility_code-constraintMsg')" required="false()"/>
+			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" relevant="/data/facility_code != ''" required="false()"/>
 			<bind nodeset="/data/other_details"/>
 			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" required="true()"/>
 			<bind nodeset="/data/other_details/service_details" type="xsd:string"/>
@@ -116,8 +116,8 @@
 					<text id="referred_services-other_health_service-label">
 						<value>Other Health Service or health education</value>
 					</text>
-					<text id="service_provider-label">
-						<value>Service Provider</value>
+					<text id="facility_code-label">
+						<value>Facility Code</value>
 					</text>
 					<text id="service_date-label">
 						<value>Service Date</value>
@@ -134,7 +134,7 @@
 					<text id="service_details-label">
 						<value>Service Details</value>
 					</text>
-					<text id="service_provider-constraintMsg">
+					<text id="facility_code-constraintMsg">
 						<value>Service Provider ID is invalid</value>
 					</text>
 				</translation>
@@ -185,8 +185,8 @@
 				<value>other_health_services</value>
 			</item>
 		</select>
-		<input ref="/data/service_provider">
-			<label ref="jr:itext('service_provider-label')"/>
+		<input ref="/data/facility_code">
+			<label ref="jr:itext('facility_code-label')"/>
 		</input>
 		<input ref="/data/service_date">
 			<label ref="jr:itext('service_date-label')"/>

@@ -30,20 +30,23 @@
 				</data>
 			</instance>
 			<bind nodeset="/data/not_availed_reasons"/>
-			<bind nodeset="/data/not_availed_reasons/new_diagnosis_na_reason" type="xsd:string" relevant="/data/new_diagnosis = 'Not Availed' or /data/new_diagnosis = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/end-of-life_hospice_na_reason" type="xsd:string" relevant="/data/end_of_life_hospice = 'Not Availed' or /data/end_of_life_hospice = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/hiv_counseling_na_reason" type="xsd:string" relevant="/data/hiv_counseling = 'Not Availed' or /data/hiv_counseling = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/family_planning_na_reason" type="xsd:string" relevant="/data/family_planning = 'Not Availed' or /data/family_planning = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/sexually_transmitted_na_reason" type="xsd:string" relevant="/data/sexually_transmitted_infection = 'Not Availed' or /data/sexually_transmitted_infection = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/art_adherence_na_reason" type="xsd:string" relevant="/data/art_adherence_counseling = 'Not Availed' or /data/art_adherence_counseling = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/pain_management_na_reason" type="xsd:string" relevant="/data/pain_management = 'Not Availed' or /data/pain_management = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/pmtct_na_reason" type="xsd:string" relevant="/data/pmtct = 'Not Availed' or /data/pmtct = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/condoms_na_reason" type="xsd:string" relevant="/data/condoms = 'Not Availed' or /data/condoms = 'Referred'"/>
-			<bind nodeset="/data/not_availed_reasons/other_health_service_na_reason" type="xsd:string" relevant="/data/other_health_services = 'Not Availed' or /data/other_health_services = 'Referred'"/>
+			<bind nodeset="/data/not_availed_reasons/new_diagnosis_na_reason" relevant="/data/new_diagnosis = 'Not Availed' or /data/new_diagnosis = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/end-of-life_hospice_na_reason" relevant="/data/end_of_life_hospice = 'Not Availed' or /data/end_of_life_hospice = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/hiv_counseling_na_reason" relevant="/data/hiv_counseling = 'Not Availed' or /data/hiv_counseling = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/family_planning_na_reason" relevant="/data/family_planning = 'Not Availed' or /data/family_planning = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/sexually_transmitted_na_reason" relevant="/data/sexually_transmitted_infection = 'Not Availed' or /data/sexually_transmitted_infection = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/art_adherence_na_reason" relevant="/data/art_adherence_counseling = 'Not Availed' or /data/art_adherence_counseling = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/pain_management_na_reason" relevant="/data/pain_management = 'Not Availed' or /data/pain_management = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/pmtct_na_reason" relevant="/data/pmtct = 'Not Availed' or /data/pmtct = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/condoms_na_reason" relevant="/data/condoms = 'Not Availed' or /data/condoms = 'Referred'" required="true()"/>
+			<bind nodeset="/data/not_availed_reasons/other_health_service_na_reason" relevant="/data/other_health_services = 'Not Availed' or /data/other_health_services = 'Referred'" required="true()"/>
 			<bind nodeset="/data/form_type" type="xsd:string"/>
 			<bind nodeset="/data/new_diagnosis" type="xsd:string"/>
 			<itext>
 				<translation lang="en" default="">
+					<text id="not_availed_reasons-label">
+						<value>Not Availed Reasons</value>
+					</text>
 					<text id="new_diagnosis_na_reason-label">
 						<value>New diagnosis / pre-ART enrollment, CD4 test</value>
 					</text>
@@ -62,20 +65,38 @@
 					<text id="art_adherence_na_reason-label">
 						<value>ART adherence counseling</value>
 					</text>
-					<text id="not_availed_reasons-label">
-						<value>Not Availed Reasons</value>
-					</text>
 					<text id="pain_management_na_reason-label">
 						<value>Pain Management</value>
 					</text>
 					<text id="pmtct_na_reason-label">
 						<value>PMTCT</value>
 					</text>
+					<text id="condoms_na_reason-label">
+						<value>Condoms</value>
+					</text>
 					<text id="other_health_service_na_reason-label">
 						<value>Other Health Service or health education</value>
 					</text>
-					<text id="condoms_na_reason-label">
-						<value>Condoms</value>
+					<text id="new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label">
+						<value>Service unavailable in the facility</value>
+					</text>
+					<text id="new_diagnosis_na_reason-FACILITY_CLOSED-label">
+						<value>Facility Closed</value>
+					</text>
+					<text id="new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label">
+						<value>Beneficiary unable to travel</value>
+					</text>
+					<text id="new_diagnosis_na_reason-BEN_FORGOT-label">
+						<value>Beneficiary forgot the appointment</value>
+					</text>
+					<text id="new_diagnosis_na_reason-BEN_UNWILLING-label">
+						<value>Beneficiary unwilling to avail the service</value>
+					</text>
+					<text id="new_diagnosis_na_reason-AVAILED_NOT_RECORED-label">
+						<value>Service availed but not recorded</value>
+					</text>
+					<text id="new_diagnosis_na_reason-OTHER-label">
+						<value>Other</value>
 					</text>
 				</translation>
 			</itext>
@@ -84,36 +105,316 @@
 	<h:body>
 		<group ref="/data/not_availed_reasons">
 			<label ref="jr:itext('not_availed_reasons-label')"/>
-			<input ref="/data/not_availed_reasons/new_diagnosis_na_reason">
+			<select1 ref="/data/not_availed_reasons/new_diagnosis_na_reason">
 				<label ref="jr:itext('new_diagnosis_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/end-of-life_hospice_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/end-of-life_hospice_na_reason">
 				<label ref="jr:itext('end-of-life_hospice_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/hiv_counseling_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/hiv_counseling_na_reason">
 				<label ref="jr:itext('hiv_counseling_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/family_planning_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/family_planning_na_reason">
 				<label ref="jr:itext('family_planning_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/sexually_transmitted_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/sexually_transmitted_na_reason">
 				<label ref="jr:itext('sexually_transmitted_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/art_adherence_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/art_adherence_na_reason">
 				<label ref="jr:itext('art_adherence_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/pain_management_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/pain_management_na_reason">
 				<label ref="jr:itext('pain_management_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/pmtct_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/pmtct_na_reason">
 				<label ref="jr:itext('pmtct_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/condoms_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/condoms_na_reason">
 				<label ref="jr:itext('condoms_na_reason-label')"/>
-			</input>
-			<input ref="/data/not_availed_reasons/other_health_service_na_reason">
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
+			<select1 ref="/data/not_availed_reasons/other_health_service_na_reason">
 				<label ref="jr:itext('other_health_service_na_reason-label')"/>
-			</input>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label')"/>
+					<value>SERVICE_UNAVAILABLE</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-FACILITY_CLOSED-label')"/>
+					<value>FACILITY_CLOSED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNABLE_TO_TRAVEL-label')"/>
+					<value>BEN_UNABLE_TO_TRAVEL</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_FORGOT-label')"/>
+					<value>BEN_FORGOT</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-BEN_UNWILLING-label')"/>
+					<value>BEN_UNWILLING</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-AVAILED_NOT_RECORED-label')"/>
+					<value>AVAILED_NOT_RECORED</value>
+				</item>
+				<item>
+					<label ref="jr:itext('new_diagnosis_na_reason-OTHER-label')"/>
+					<value>OTHER</value>
+				</item>
+			</select1>
 		</group>
 	</h:body>
 </h:html>
