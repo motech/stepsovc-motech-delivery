@@ -3,9 +3,9 @@
     <typedef file="ant/config-macros.xml"/>
     <typedef file="org/motechproject/build/deployMacroDefs.xml"/>
 
+    <property file="${basedir}/properties/${env}/deploy.properties"/>
 
     <target name="deploy.stepsovc.from.hudson">
-        <property file="${basedir}/properties/${env}/deploy.properties"/>
         <stop.tomcat
                 tomcat.home="${tomcat.home}"
                 tomcat.port="${tomcat.port}"/>
@@ -94,6 +94,7 @@
              userid="${postgres.user}"
              classpathref="dependencies"
              password="${postgres.password}"
+             autocommit="true"
           >
             drop database if exists ${postgres.quartz.db};
             create database ${postgres.quartz.db};
@@ -103,7 +104,9 @@
              userid="${postgres.user}"
              classpathref="dependencies"
              password="${postgres.password}"
-             src="./sql/quartz.sql">
+             src="./sql/quartz.sql"
+             autocommit="true"
+             >
 
         </sql>
 
@@ -120,6 +123,7 @@
              userid="${postgres.user}"
              classpathref="dependencies"
              password="${postgres.password}"
+             autocommit="true"
                 >
             drop database if exists ${postgres.aggregator.db};
             create database ${postgres.aggregator.db};
@@ -129,7 +133,8 @@
              userid="${postgres.user}"
              classpathref="dependencies"
              password="${postgres.password}"
-             src="./sql/aggregator.sql">
+             src="./sql/aggregator.sql"
+             autocommit="true">
 
         </sql>
 

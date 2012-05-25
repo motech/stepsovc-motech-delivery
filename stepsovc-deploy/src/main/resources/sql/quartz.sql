@@ -155,4 +155,3 @@ INSERT INTO qrtz_locks values('STATE_ACCESS');
 INSERT INTO qrtz_locks values('MISFIRE_ACCESS');
 
 commit;
-\q
