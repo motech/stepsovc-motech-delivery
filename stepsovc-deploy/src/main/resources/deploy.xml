@@ -38,6 +38,12 @@
                 tomcat.port="${tomcat.port}"/>
     </target>
 
+    <target name="recreatedb.and.deploy.stepsovc.from.hudson" depends="load.quartz.schema,load.aggregator.schema">
+        <antcall target="deploy.stepsovc.from.hudson"></antcall>
+    </target>
+
+
+
     <target name="deploy.stepsovc.from.nexus">
         <property file="${basedir}/properties/${env}/deploy.properties"/>
         <stop.tomcat
@@ -70,6 +76,64 @@
                 tomcat.home="${tomcat.home}"
                 tomcat.port="${tomcat.port}"/>
 
+    </target>
+
+
+    <target name="recreatedb.and.deploy.stepsovc.from.nexus" depends="load.quartz.schema,load.aggregator.schema">
+        <antcall target="deploy.stepsovc.from.nexus"></antcall>
+    </target>
+
+
+    <target name="load.quartz.schema">
+        <path id="dependencies">
+            <fileset file="./lib/postgresql-9.1-901.jdbc4.jar"/>
+        </path>
+
+        <sql driver="${postgres.driver}"
+             url="jdbc:postgresql://${postgres.server}:${postgres.port}/${postgres.db}"
+             userid="${postgres.user}"
+             classpathref="dependencies"
+             password="${postgres.password}"
+          >
+            drop database if exists ${postgres.quartz.db};
+            create database ${postgres.quartz.db};
+        </sql>
+        <sql driver="${postgres.driver}"
+             url="jdbc:postgresql://${postgres.server}:${postgres.port}/${postgres.quartz.db}"
+             userid="${postgres.user}"
+             classpathref="dependencies"
+             password="${postgres.password}"
+             src="./sql/quartz.sql">
+
+        </sql>
+
+        <echo message="recreated schema for ${postgres.quartz.db}"/>
+    </target>
+
+    <target name="load.aggregator.schema">
+        <path id="dependencies">
+            <fileset file="./lib/postgresql-9.1-901.jdbc4.jar"/>
+        </path>
+
+        <sql driver="${postgres.driver}"
+             url="jdbc:postgresql://${postgres.server}:${postgres.port}/${postgres.db}"
+             userid="${postgres.user}"
+             classpathref="dependencies"
+             password="${postgres.password}"
+                >
+            drop database if exists ${postgres.aggregator.db};
+            create database ${postgres.aggregator.db};
+        </sql>
+        <sql driver="${postgres.driver}"
+             url="jdbc:postgresql://${postgres.server}:${postgres.port}/${postgres.aggregator.db}"
+             userid="${postgres.user}"
+             classpathref="dependencies"
+             password="${postgres.password}"
+             src="./sql/aggregator.sql">
+
+        </sql>
+
+        <echo message="recreated schema for ${postgres.aggregator.db}"/>
     </target>
 
     <macrodef name="copy.over.properties">
