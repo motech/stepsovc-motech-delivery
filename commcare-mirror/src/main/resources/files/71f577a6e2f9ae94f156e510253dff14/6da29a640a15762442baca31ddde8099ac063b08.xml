@@ -1,0 +1,35 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Ownership Request</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/E7C16E71-835E-4867-ADB3-12A536BEF603" uiVersion="1" version="1" name="Ownership Request">
+					<beneficiary_code/>
+					<form_type>user_ownership_request</form_type>
+					<caregiver_code/>
+				</data>
+			</instance>
+			<bind nodeset="/data/beneficiary_code" type="xsd:string"/>
+			<bind nodeset="/data/form_type"/>
+			<bind nodeset="/data/caregiver_code" type="xsd:string"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="beneficiary_code-label">
+						<value>Beneficiary Code</value>
+					</text>
+					<text id="caregiver_code-label">
+						<value>Caregiver Code</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/beneficiary_code">
+			<label ref="jr:itext('beneficiary_code-label')"/>
+		</input>
+		<input ref="/data/caregiver_code">
+			<label ref="jr:itext('caregiver_code-label')"/>
+		</input>
+	</h:body>
+</h:html>
