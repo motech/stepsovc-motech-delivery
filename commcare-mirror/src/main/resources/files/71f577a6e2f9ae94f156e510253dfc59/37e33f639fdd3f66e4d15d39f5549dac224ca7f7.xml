@@ -1,0 +1,35 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2E970B1A-1102-4627-8BC6-F7BC1E2535AC" uiVersion="1" version="1" name="New Form">
+					<beneficiary_code/>
+					<facility_code/>
+					<form_type>facility_ownership_request</form_type>
+				</data>
+			</instance>
+			<bind nodeset="/data/beneficiary_code" type="xsd:string"/>
+			<bind nodeset="/data/facility_code" type="xsd:string"/>
+			<bind nodeset="/data/form_type"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="beneficiary_code-label">
+						<value>Beneficiary Code</value>
+					</text>
+					<text id="facility_code-label">
+						<value>Facility Code</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/beneficiary_code">
+			<label ref="jr:itext('beneficiary_code-label')"/>
+		</input>
+		<input ref="/data/facility_code">
+			<label ref="jr:itext('facility_code-label')"/>
+		</input>
+	</h:body>
+</h:html>

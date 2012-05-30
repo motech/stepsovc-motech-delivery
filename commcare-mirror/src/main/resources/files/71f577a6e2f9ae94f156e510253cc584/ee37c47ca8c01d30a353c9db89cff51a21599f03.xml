@@ -1,0 +1,27 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>New Form</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/264A218C-5221-4AE1-AE1C-C7F985AA9BDD" uiVersion="1" version="1" name="New Form">
+					<action/>
+					<form_type>ownership_registration</form_type>
+				</data>
+			</instance>
+			<bind nodeset="/data/action" type="xsd:string"/>
+			<bind nodeset="/data/form_type"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="action-label">
+						<value>Action</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<input ref="/data/action">
+			<label ref="jr:itext('action-label')"/>
+		</input>
+	</h:body>
+</h:html>
