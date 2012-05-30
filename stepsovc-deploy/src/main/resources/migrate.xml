@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-    <property file="../properties/migration.properties"/>
+    <property file="${basedir}/properties/${env}/deploy.properties"/>
+
+    <property file="${basedir}/properties/${env}/migration.properties"/>
+
     <path id="lib.path">
-        <fileset dir="${library.files.path}" includes="**/*.jar"/>
+        <fileset dir="${tomcat.lib.home}" includes="**/*.jar"/>
     </path>
 
     <target name="migrate.caregiver">
         <echo message="Please Wait while the caregiver data is being imported...."/>
+        <echo message="PATH -- ${lib.path} ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="caregiver"/>
-            <arg value="${caregiver.file.path}"/>
+            <arg value="${caregiver.csv.path}"/>
             <classpath>
-                <path location="${main.class.path}"/>
                 <path refid="lib.path"/>
             </classpath>
         </java>
