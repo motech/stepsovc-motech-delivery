@@ -21,6 +21,19 @@
         <echo message="Caregiver data import is completed"/>
     </target>
 
+    <target name="migrate.caregiver.phonenumber">
+        <echo message="Please Wait while the caregiver phone numbers are being imported...."/>
+        <echo message="PATH -- ${lib.path} ${tomcat.lib.home}"/>
+        <java fork="false" classname="${main.class.name}">
+            <arg value="caregiver-phonenumber"/>
+            <arg value="${caregiver-phonenumber.csv.path}"/>
+            <classpath>
+                <path refid="lib.path"/>
+            </classpath>
+        </java>
+        <echo message="Caregiver Phone Number import is completed"/>
+    </target>
+
     <target name="migrate.beneficiary">
         <echo message="Please Wait while the beneficiary data is being imported...."/>
         <java fork="false" classname="${main.class.name}">
