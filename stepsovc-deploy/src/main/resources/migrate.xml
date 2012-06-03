@@ -40,7 +40,6 @@
             <arg value="beneficiary"/>
             <arg value="${beneficiary.csv.path}"/>
             <classpath>
-                <path location="${main.class.path}"/>
                 <path refid="lib.path"/>
             </classpath>
         </java>
