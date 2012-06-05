@@ -153,6 +153,16 @@
                   file="${basedir}/properties/${env}/stepsovc.properties"/>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
                   file="${basedir}/properties/${env}/osgi.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/aggregator.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/postgresql.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/quartz.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/smpp.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/sms.properties"/>
         </sequential>
     </macrodef>
 
