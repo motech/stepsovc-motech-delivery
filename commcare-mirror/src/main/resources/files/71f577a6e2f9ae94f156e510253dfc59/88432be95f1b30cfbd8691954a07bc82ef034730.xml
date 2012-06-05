@@ -46,7 +46,7 @@
 			</instance>
 			<bind nodeset="/data/received_services"/>
 			<bind nodeset="/data/facility_code" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003'" jr:constraintMsg="jr:itext('facility_code-constraintMsg')" required="false()"/>
-			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" relevant="/data/facility_code != ''" required="false()"/>
+			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" relevant="/data/facility_code != ''" required="true()"/>
 			<bind nodeset="/data/other_details"/>
 			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" required="true()"/>
 			<bind nodeset="/data/other_details/service_details" type="xsd:string"/>
@@ -117,7 +117,7 @@
 						<value>Other Health Service or health education</value>
 					</text>
 					<text id="facility_code-label">
-						<value>Facility Code</value>
+						<value>Alternate Facility Code</value>
 					</text>
 					<text id="service_date-label">
 						<value>Service Date</value>
