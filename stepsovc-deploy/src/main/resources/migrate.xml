@@ -52,7 +52,6 @@
             <arg value="facility"/>
             <arg value="${facility.csv.path}"/>
             <classpath>
-                <path location="${main.class.path}"/>
                 <path refid="lib.path"/>
             </classpath>
         </java>
