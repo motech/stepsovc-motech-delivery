@@ -7,11 +7,13 @@
 					<service_unavailable_from/>
 					<service_unavailable_to/>
 					<service_unavailable_reason/>
+					<form_type>facility_unavailability</form_type>
 				</data>
 			</instance>
 			<bind nodeset="/data/service_unavailable_from" type="xsd:date" constraint=". &gt;= today()" required="true()"/>
 			<bind nodeset="/data/service_unavailable_to" type="xsd:date" constraint=". &gt;= /data/service_unavailable_from" required="true()"/>
 			<bind nodeset="/data/service_unavailable_reason" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/form_type"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="service_unavailable_from-label">
