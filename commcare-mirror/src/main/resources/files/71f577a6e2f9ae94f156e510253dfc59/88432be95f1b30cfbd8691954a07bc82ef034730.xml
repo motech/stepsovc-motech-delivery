@@ -87,34 +87,34 @@
 						<value>Received Services</value>
 					</text>
 					<text id="referred_services-new_diagnosis-label">
-						<value>New diagnosis / pre-ART enrollment, CD4 test</value>
+						<value>001 New diagnosis / pre-ART enrollment, CD4 test</value>
 					</text>
 					<text id="referred_services-end-of-life_hospice-label">
-						<value>End-of-life hospice/hospital admission</value>
+						<value>002 End-of-life hospice/hospital admission</value>
 					</text>
 					<text id="referred_services-hiv_counseling-label">
-						<value>HIV counseling and testing</value>
+						<value>003 HIV counseling and testing</value>
 					</text>
 					<text id="referred_services-family_planning-label">
-						<value>Family Planning</value>
+						<value>004 Family Planning</value>
 					</text>
 					<text id="referred_services-sexually_transmitted_infection-label">
-						<value>Sexually transmitted infection</value>
+						<value>005 Sexually transmitted infection</value>
 					</text>
 					<text id="referred_services-art_adherence_counseling-label">
-						<value>ART adherence counseling</value>
+						<value>006 ART adherence counseling</value>
 					</text>
 					<text id="referred_services-pain_management-label">
-						<value>Pain Management</value>
+						<value>007 Pain Management</value>
 					</text>
 					<text id="referred_services-pmtct-label">
-						<value>PMTCT</value>
+						<value>008 PMTCT</value>
 					</text>
 					<text id="referred_services-condoms-label">
-						<value>Condoms</value>
+						<value>009 Condoms</value>
 					</text>
 					<text id="referred_services-other_health_service-label">
-						<value>Other Health Service or health education</value>
+						<value>010 Other Health Service or health education</value>
 					</text>
 					<text id="facility_code-label">
 						<value>Alternate Facility Code</value>
