@@ -18,7 +18,7 @@
 					<sexually_transmitted_infection/>
 					<art_adherence_counseling/>
 					<pain_management/>
-					<pmctc/>
+					<pmtct/>
 					<condoms/>
 					<new_diagnosis/>
 					<other_health_services_pre/>
@@ -28,7 +28,7 @@
 					<sexually_transmitted_infection_pre/>
 					<art_adherence_counseling_pre/>
 					<pain_management_pre/>
-					<pmctc_pre/>
+					<pmtct_pre/>
 					<condoms_pre/>
 					<new_diagnosis_pre/>
 					<is_other_health_services_na/>
@@ -38,7 +38,7 @@
 					<is_sexually_transmitted_infection_na/>
 					<is_art_adherence_counseling_na/>
 					<is_pain_management_na/>
-					<is_pmctc_na/>
+					<is_pmtct_na/>
 					<is_condoms_na/>
 					<is_new_diagnosis_na/>
 					<form_type>update_service</form_type>
@@ -57,7 +57,7 @@
 			<bind nodeset="/data/sexually_transmitted_infection" type="xsd:string" calculate="if(selected(/data/received_services, 'sexually_transmitted_infection'), 'Received', /data/is_sexually_transmitted_infection_na)"/>
 			<bind nodeset="/data/art_adherence_counseling" type="xsd:string" calculate="if(selected(/data/received_services, 'art_adherence_counseling'), 'Received', /data/is_art_adherence_counseling_na)"/>
 			<bind nodeset="/data/pain_management" type="xsd:string" calculate="if(selected(/data/received_services, 'pain_management'), 'Received', /data/is_pain_management_na)"/>
-			<bind nodeset="/data/pmctc" type="xsd:string" calculate="if(selected(/data/received_services, 'pmctc'), 'Received', /data/is_pmctc_na)"/>
+			<bind nodeset="/data/pmtct" type="xsd:string" calculate="if(selected(/data/received_services, 'pmtct'), 'Received', /data/is_pmtct_na)"/>
 			<bind nodeset="/data/condoms" type="xsd:string" calculate="if(selected(/data/received_services, 'condoms'), 'Received', /data/is_condoms_na)"/>
 			<bind nodeset="/data/new_diagnosis" type="xsd:string" required="true()" calculate="if(selected(/data/received_services, 'new_diagnosis'), 'Received', /data/is_new_diagnosis_na)"/>
 			<bind nodeset="/data/other_health_services_pre" type="xsd:string"/>
@@ -67,7 +67,7 @@
 			<bind nodeset="/data/sexually_transmitted_infection_pre" type="xsd:string"/>
 			<bind nodeset="/data/art_adherence_counseling_pre" type="xsd:string"/>
 			<bind nodeset="/data/pain_management_pre" type="xsd:string"/>
-			<bind nodeset="/data/pmctc_pre" type="xsd:string"/>
+			<bind nodeset="/data/pmtct_pre" type="xsd:string"/>
 			<bind nodeset="/data/condoms_pre" type="xsd:string"/>
 			<bind nodeset="/data/new_diagnosis_pre" type="xsd:string"/>
 			<bind nodeset="/data/is_other_health_services_na" type="xsd:string" calculate="if(/data/other_health_services_pre = 'Referred', 'Not Availed', /data/other_health_services_pre)"/>
@@ -77,7 +77,7 @@
 			<bind nodeset="/data/is_sexually_transmitted_infection_na" type="xsd:string" calculate="if(/data/sexually_transmitted_infection_pre = 'Referred', 'Not Availed', /data/sexually_transmitted_infection_pre)"/>
 			<bind nodeset="/data/is_art_adherence_counseling_na" type="xsd:string" calculate="if(/data/art_adherence_counseling_pre = 'Referred', 'Not Availed', /data/art_adherence_counseling_pre)"/>
 			<bind nodeset="/data/is_pain_management_na" type="xsd:string" calculate="if(/data/pain_management_pre = 'Referred', 'Not Availed', /data/pain_management_pre)"/>
-			<bind nodeset="/data/is_pmctc_na" type="xsd:string" calculate="if(/data/pmctc_pre = 'Referred', 'Not Availed', /data/pmctc_pre)"/>
+			<bind nodeset="/data/is_pmtct_na" type="xsd:string" calculate="if(/data/pmtct_pre = 'Referred', 'Not Availed', /data/pmtct_pre)"/>
 			<bind nodeset="/data/is_condoms_na" type="xsd:string" calculate="if(/data/condoms_pre = 'Referred', 'Not Availed', /data/condoms_pre)"/>
 			<bind nodeset="/data/is_new_diagnosis_na" type="xsd:string" calculate="if(/data/new_diagnosis_pre = 'Referred', 'Not Availed', /data/new_diagnosis_pre)"/>
 			<bind nodeset="/data/form_type" type="xsd:string"/>

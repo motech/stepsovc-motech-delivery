@@ -48,34 +48,34 @@
 						<value>Not Availed Reasons</value>
 					</text>
 					<text id="new_diagnosis_na_reason-label">
-						<value>New diagnosis / pre-ART enrollment, CD4 test</value>
+						<value>001 New diagnosis / pre-ART enrollment, CD4 test</value>
 					</text>
 					<text id="end-of-life_hospice_na_reason-label">
-						<value>End-of-life hospice/hospital admission</value>
+						<value>002 End-of-life hospice/hospital admission</value>
 					</text>
 					<text id="hiv_counseling_na_reason-label">
-						<value>HIV counseling and testing</value>
+						<value>003 HIV counseling and testing</value>
 					</text>
 					<text id="family_planning_na_reason-label">
-						<value>Family Planning</value>
+						<value>004 Family Planning</value>
 					</text>
 					<text id="sexually_transmitted_na_reason-label">
-						<value>Sexually transmitted infection</value>
+						<value>005 Sexually transmitted infection</value>
 					</text>
 					<text id="art_adherence_na_reason-label">
-						<value>ART adherence counseling</value>
+						<value>006 ART adherence counseling</value>
 					</text>
 					<text id="pain_management_na_reason-label">
-						<value>Pain Management</value>
+						<value>007 Pain Management</value>
 					</text>
 					<text id="pmtct_na_reason-label">
-						<value>PMTCT</value>
+						<value>008 PMTCT</value>
 					</text>
 					<text id="condoms_na_reason-label">
-						<value>Condoms</value>
+						<value>009 Condoms</value>
 					</text>
 					<text id="other_health_service_na_reason-label">
-						<value>Other Health Service or health education</value>
+						<value>010 Other Health Service or health education</value>
 					</text>
 					<text id="new_diagnosis_na_reason-SERVICE_UNAVAILABLE-label">
 						<value>Service unavailable in the facility</value>
