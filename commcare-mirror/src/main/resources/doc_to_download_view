@@ -1,5 +1,5 @@
 {"map":"function(doc){
-    if(( doc.doc_type === 'Domain' || doc.doc_type == 'CaseRepeater' || doc.doc_type == 'Application' || doc.doc_type == 'RemoteApp') && doc.copy_of == null) {
+    if(( doc.doc_type === 'Domain' || doc.doc_type == 'CaseRepeater' || doc.doc_type == 'Application' || doc.doc_type == 'RemoteApp' || (doc.doc_type == 'WebUser' && doc.is_active)) && doc.copy_of == null) {
         emit(doc._id, null);
     }
 }"}
