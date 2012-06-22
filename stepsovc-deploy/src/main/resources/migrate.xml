@@ -8,6 +8,10 @@
         <fileset dir="${tomcat.lib.home}" includes="**/*.jar"/>
     </path>
 
+    <path id="properties.path">
+        <fileset dir="${basedir}/properties/${env}" includes="**/*.properties"/>
+    </path>
+
     <target name="migrate.caregiver">
         <echo message="Please Wait while the caregiver data is being imported...."/>
         <echo message="PATH -- ${lib.path} ${tomcat.lib.home}"/>
@@ -16,6 +20,7 @@
             <arg value="${caregiver.csv.path}"/>
             <classpath>
                 <path refid="lib.path"/>
+                <path refid="properties.path"/>
             </classpath>
         </java>
         <echo message="Caregiver data import is completed"/>
