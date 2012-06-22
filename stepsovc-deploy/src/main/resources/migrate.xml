@@ -57,4 +57,16 @@
         </java>
         <echo message="Facility data import is completed"/>
     </target>
+
+    <target name="migrate.facility.phonenumber">
+        <echo message="Please Wait while the facility phone numbers are being imported...."/>
+        <java fork="false" classname="${main.class.name}">
+            <arg value="facility-phonenumber"/>
+            <arg value="${facility-phonenumber.csv.path}"/>
+            <classpath>
+                <path refid="lib.path"/>
+            </classpath>
+        </java>
+        <echo message="Facility phone number import is completed"/>
+    </target>
 </project>
