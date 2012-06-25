@@ -9,7 +9,7 @@
     </path>
 
     <path id="properties.path">
-        <fileset dir="${basedir}/properties/${env}" includes="**/*.properties"/>
+        <pathelement path="${basedir}/properties/${env}"/>
     </path>
 
     <target name="migrate.caregiver">
@@ -19,8 +19,8 @@
             <arg value="caregiver"/>
             <arg value="${caregiver.csv.path}"/>
             <classpath>
-                <path refid="lib.path"/>
                 <path refid="properties.path"/>
+                <path refid="lib.path"/>
             </classpath>
         </java>
         <echo message="Caregiver data import is completed"/>
@@ -33,6 +33,7 @@
             <arg value="caregiver-phonenumber"/>
             <arg value="${caregiver-phonenumber.csv.path}"/>
             <classpath>
+                <path refid="properties.path"/>
                 <path refid="lib.path"/>
             </classpath>
         </java>
@@ -45,6 +46,7 @@
             <arg value="beneficiary"/>
             <arg value="${beneficiary.csv.path}"/>
             <classpath>
+                <path refid="properties.path"/>
                 <path refid="lib.path"/>
             </classpath>
         </java>
@@ -57,7 +59,8 @@
             <arg value="facility"/>
             <arg value="${facility.csv.path}"/>
             <classpath>
-                <path refid="lib.path"/>
+                <path refid="properties.path"/>
+                <path refid="libs.path"/>
             </classpath>
         </java>
         <echo message="Facility data import is completed"/>
@@ -69,9 +72,11 @@
             <arg value="facility-phonenumber"/>
             <arg value="${facility-phonenumber.csv.path}"/>
             <classpath>
+                <path refid="properties.path"/>
                 <path refid="lib.path"/>
             </classpath>
         </java>
         <echo message="Facility phone number import is completed"/>
     </target>
 </project>
+
