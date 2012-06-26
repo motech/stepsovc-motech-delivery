@@ -4,71 +4,74 @@
 
     <property file="${basedir}/properties/${env}/migration.properties"/>
 
-    <path id="master.path">
+    <path id="master-classpath">
         <pathelement path="${basedir}/properties/${env}"/>
         <fileset dir="${tomcat.lib.home}" includes="**/*.jar"/>
     </path>
 
     <target name="migrate.caregiver">
         <echo message="Please Wait while the caregiver data is being imported...."/>
-        <echo message="PATH -- ${tomcat.lib.home}"/>
+        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="caregiver"/>
             <arg value="${caregiver.csv.path}"/>
             <classpath>
-                <path refid="master.path"/>
+                <path refid="master-classpath"/>
             </classpath>
         </java>
-        <echo message="Caregiver data import is completed"/>
+        <echo message="Process completed"/>
     </target>
 
     <target name="migrate.caregiver.phonenumber">
         <echo message="Please Wait while the caregiver phone numbers are being imported...."/>
-        <echo message="PATH -- ${tomcat.lib.home}"/>
+        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="caregiver-phonenumber-facilitycode"/>
             <arg value="${caregiver-phonenumber.csv.path}"/>
             <classpath>
-                <path refid="master.path"/>
+                <path refid="master-classpath"/>
             </classpath>
         </java>
-        <echo message="Caregiver Phone Number import is completed"/>
+        <echo message="Process completed"/>
     </target>
 
     <target name="migrate.beneficiary">
         <echo message="Please Wait while the beneficiary data is being imported...."/>
+        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="beneficiary"/>
             <arg value="${beneficiary.csv.path}"/>
             <classpath>
-                <path refid="master.path"/>
+                <path refid="master-classpath"/>
             </classpath>
         </java>
-        <echo message="Beneficiary data import is completed"/>
+        <echo message="Process completed"/>
     </target>
 
     <target name="migrate.facility">
         <echo message="Please Wait while the facility data is being imported...."/>
+        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="facility"/>
             <arg value="${facility.csv.path}"/>
             <classpath>
-                <path refid="master.path"/>
+                <path refid="master-classpath"/>
             </classpath>
         </java>
-        <echo message="Facility data import is completed"/>
+        <echo message="Process completed"/>
     </target>
 
     <target name="migrate.facility.phonenumber">
         <echo message="Please Wait while the facility phone numbers are being imported...."/>
+        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="facility-phonenumber"/>
             <arg value="${facility-phonenumber.csv.path}"/>
             <classpath>
-                <path refid="master.path"/>
+                <path refid="master-classpath"/>
             </classpath>
         </java>
-        <echo message="Facility phone number import is completed"/>
+        <echo message="Process completed"/>
     </target>
 </project>
 
