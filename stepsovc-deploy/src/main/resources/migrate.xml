@@ -4,23 +4,19 @@
 
     <property file="${basedir}/properties/${env}/migration.properties"/>
 
-    <path id="lib.path">
-        <fileset dir="${tomcat.lib.home}" includes="**/*.jar"/>
-    </path>
-
-    <path id="properties.path">
+    <path id="master.path">
         <pathelement path="${basedir}/properties/${env}"/>
+        <fileset dir="${tomcat.lib.home}" includes="**/*.jar"/>
     </path>
 
     <target name="migrate.caregiver">
         <echo message="Please Wait while the caregiver data is being imported...."/>
-        <echo message="PATH -- ${lib.path} ${tomcat.lib.home}"/>
+        <echo message="PATH -- ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
             <arg value="caregiver"/>
             <arg value="${caregiver.csv.path}"/>
             <classpath>
-                <path refid="properties.path"/>
-                <path refid="lib.path"/>
+                <path refid="master.path"/>
             </classpath>
         </java>
         <echo message="Caregiver data import is completed"/>
@@ -28,13 +24,12 @@
 
     <target name="migrate.caregiver.phonenumber">
         <echo message="Please Wait while the caregiver phone numbers are being imported...."/>
-        <echo message="PATH -- ${lib.path} ${tomcat.lib.home}"/>
+        <echo message="PATH -- ${tomcat.lib.home}"/>
         <java fork="false" classname="${main.class.name}">
-            <arg value="caregiver-phonenumber"/>
+            <arg value="caregiver-phonenumber-facilitycode"/>
             <arg value="${caregiver-phonenumber.csv.path}"/>
             <classpath>
-                <path refid="properties.path"/>
-                <path refid="lib.path"/>
+                <path refid="master.path"/>
             </classpath>
         </java>
         <echo message="Caregiver Phone Number import is completed"/>
@@ -46,8 +41,7 @@
             <arg value="beneficiary"/>
             <arg value="${beneficiary.csv.path}"/>
             <classpath>
-                <path refid="properties.path"/>
-                <path refid="lib.path"/>
+                <path refid="master.path"/>
             </classpath>
         </java>
         <echo message="Beneficiary data import is completed"/>
@@ -59,8 +53,7 @@
             <arg value="facility"/>
             <arg value="${facility.csv.path}"/>
             <classpath>
-                <path refid="properties.path"/>
-                <path refid="libs.path"/>
+                <path refid="master.path"/>
             </classpath>
         </java>
         <echo message="Facility data import is completed"/>
@@ -72,8 +65,7 @@
             <arg value="facility-phonenumber"/>
             <arg value="${facility-phonenumber.csv.path}"/>
             <classpath>
-                <path refid="properties.path"/>
-                <path refid="lib.path"/>
+                <path refid="master.path"/>
             </classpath>
         </java>
         <echo message="Facility phone number import is completed"/>
