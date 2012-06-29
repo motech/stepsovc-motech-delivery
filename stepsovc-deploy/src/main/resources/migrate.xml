@@ -11,8 +11,8 @@
 
     <target name="migrate.caregiver">
         <echo message="Please Wait while the caregiver data is being imported...."/>
-        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
-        <java fork="false" classname="${main.class.name}">
+        <echo message="Invoking ${importer.class.name} at ${tomcat.lib.home}"/>
+        <java fork="false" classname="${importer.class.name}">
             <arg value="caregiver"/>
             <arg value="${caregiver.csv.path}"/>
             <classpath>
@@ -24,8 +24,8 @@
 
     <target name="migrate.caregiver.phonenumber">
         <echo message="Please Wait while the caregiver phone numbers are being imported...."/>
-        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
-        <java fork="false" classname="${main.class.name}">
+        <echo message="Invoking ${importer.class.name} at ${tomcat.lib.home}"/>
+        <java fork="false" classname="${importer.class.name}">
             <arg value="caregiver-phonenumber-facilitycode"/>
             <arg value="${caregiver-phonenumber.csv.path}"/>
             <classpath>
@@ -37,8 +37,8 @@
 
     <target name="migrate.beneficiary">
         <echo message="Please Wait while the beneficiary data is being imported...."/>
-        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
-        <java fork="false" classname="${main.class.name}">
+        <echo message="Invoking ${importer.class.name} at ${tomcat.lib.home}"/>
+        <java fork="false" classname="${importer.class.name}">
             <arg value="beneficiary"/>
             <arg value="${beneficiary.csv.path}"/>
             <classpath>
@@ -50,8 +50,8 @@
 
     <target name="migrate.facility">
         <echo message="Please Wait while the facility data is being imported...."/>
-        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
-        <java fork="false" classname="${main.class.name}">
+        <echo message="Invoking ${importer.class.name} at ${tomcat.lib.home}"/>
+        <java fork="false" classname="${importer.class.name}">
             <arg value="facility"/>
             <arg value="${facility.csv.path}"/>
             <classpath>
@@ -63,8 +63,8 @@
 
     <target name="migrate.facility.phonenumber">
         <echo message="Please Wait while the facility phone numbers are being imported...."/>
-        <echo message="Invoking ${main.class.name} at ${tomcat.lib.home}"/>
-        <java fork="false" classname="${main.class.name}">
+        <echo message="Invoking ${importer.class.name} at ${tomcat.lib.home}"/>
+        <java fork="false" classname="${importer.class.name}">
             <arg value="facility-phonenumber"/>
             <arg value="${facility-phonenumber.csv.path}"/>
             <classpath>
@@ -73,5 +73,17 @@
         </java>
         <echo message="Process completed"/>
     </target>
+
+    <target name="create.case">
+        <echo message="Please Wait while a ownership case is created in commcare...."/>
+        <echo message="Invoking ${case.creator.class.name} at ${tomcat.lib.home}"/>
+        <java fork="false" classname="${case.creator.class.name}">
+            <classpath>
+                <path refid="master-classpath"/>
+            </classpath>
+        </java>
+        <echo message="Process completed"/>
+    </target>
+
 </project>
 
