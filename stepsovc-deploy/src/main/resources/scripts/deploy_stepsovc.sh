@@ -15,7 +15,7 @@ jar -xf ../stepsovc-deploy-0.1-SNAPSHOT.jar
 
 if [ $# -eq 0 ];
 then
-	echo 'Please pass the environment [qa or showcase]'	
+	echo 'Please pass the environment [qa or showcase or prod]'
 else
 	ant -f deploy.xml -Denv=$1 deploy.stepsovc.from.hudson
 fi
