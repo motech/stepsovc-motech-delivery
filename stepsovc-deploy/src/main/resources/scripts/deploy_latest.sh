@@ -17,5 +17,6 @@ if [ $# -eq 0 ];
 then
 	echo 'Please pass the environment [qa or showcase or prod]'
 else
-    sh scripts/full_deploy_stepsovc.sh $1
+    cd scripts
+    sh full_deploy_stepsovc.sh $1
 fi
