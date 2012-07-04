@@ -17,5 +17,5 @@ if [ $# -eq 0 ];
 then
 	echo 'Please pass the environment [qa or showcase or prod]'
 else
-	ant -f deploy.xml -Denv=$1 deploy.stepsovc.from.hudson
+    sh scripts/full_deploy_stepsovc.sh $1
 fi

@@ -1,4 +1,4 @@
-CREATE USER postgres WITH PASSWORD 'password';
+drop database commcarehq;
 CREATE DATABASE commcarehq;
 GRANT ALL PRIVILEGES ON DATABASE commcarehq to postgres;
 \q
