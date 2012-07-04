@@ -1,4 +1,8 @@
 facilityCode,facilityName,village,ward,constituency,district,mandatoryPhoneNumber,optionalPhoneNumber1,optionalPhoneNumber2,optionalPhoneNumber3
-FAC001,Chalimbana Rural Health Centre ,,,,,9999999,8888888,77777,66666
-FAC002,Kabeleka Rural Health Center ,,,,,989898998,8787878787,898923341
-FAC003,Kampekete Rural Health Centre ,,,,,87653427,122678433,2233567,6789433
+FAC001,Chalimbana Rural Health Centre,Chalimbana,Chalimbana,Chalimbana,,,,,
+FAC002,Kabeleka Rural Health Center,Kabeleka,Kabeleka,Kabeleka,,,,,
+FAC003,Kampekete Rural Health Centre,Kampekete,Kampekete,Kampekete,,,,,
+FAC004,Lwimba Rural Health Centre,Lwimba,Lwimba,Lwimba,,,,,
+FAC005,Machilele Rural Health Center,Machilele,Machilele,Machilele,,,,,
+FAC006,Mwalumina Rural Health Centre,Mwalumina,Mwalumina,Mwalumina,,,,,
+FAC007,Neighbourhood Rural Health Centre,Neighbourhood,Neighbourhood,Neighbourhood,,,,,
