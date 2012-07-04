@@ -9,8 +9,7 @@ python ~/projects/commcare-hq/manage.py collectstatic
 python ~/projects/commcare-hq/manage.py createsuperuser
 python ~/projects/commcare-hq/manage.py bootstrap stepsovc stepsovc@thoughtworks.com 1234
 python ~/projects/commcare-hq/manage.py make_bootstrap direct-lessc node
-
-psql -U postgres commcarehq -f '~/bootstepsovc/stepsovc_dest/sql/postdbcreate_'$1'.sql'
+psql -U postgres commcarehq -f ~/bootstepsovc/stepsovc_dest/sql/postdbcreate_$1.sql
 python ~/projects/commcare-hq/manage.py add_commcare_build ~/projects/artifacts.zip 1.3.0 7214
 
 cd ~/bootstepsovc
