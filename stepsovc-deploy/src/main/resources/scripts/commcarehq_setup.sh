@@ -82,9 +82,16 @@ echo '##########################################################'
 cd submodules
 git clone git://github.com/dimagi/django-cpserver.git
 pip install cherrypy
+
+echo '##############################################################################################################'
+echo '#########################################     DO THE FOLLOWING       #########################################'
 echo 'comment JAR SIGN settings in localsettings.py'
 echo 'add django_cpserver to INSTALLED_APPS in settings.py'
+echo 'Set LUCENE_ENABLED to True in settings.py'
 echo 'add django-cpserver to sys path in manage.py'
+echo 'set protocol to http in manage.py'
 echo 'finally run the below command to start the server '
 echo './manage.py runcpserver port=8000 host=<ip of the server>'
 echo 'If you get "peer authentication failure " change pg_hba.conf of postgres 9.1.3 to "trust" local connection '
+echo 'set DJANGO_LOG_FILE to /root/projects/commcare-hq,commcarehq.log'
+echo '##############################################################################################################'
