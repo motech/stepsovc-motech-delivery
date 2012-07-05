@@ -69,14 +69,14 @@ else
      wget -P ~/projects/ http://build.dimagi.com:250/guestLogin.html?guest=1 http://build.dimagi.com:250/repository/downloadAll/bt52/11934:id/artifacts.zip
 fi
 
-cp js/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner/map.js
 cd ~/projects/commcare-hq
 git submodule update --init --recursive
 cat requirements.txt | sed s/lxml==2.3/lxml==2.2.3/ > temp
 cat temp > requirements.txt
 rm -f temp
 pip install -r requirements.txt
-cp localsettings.py.example localsettings.py
+cp ~/bootstepsovc/stepsovc_dest/js/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner/map.js
+cp localsettings.example.py localsettings.py
 
 echo '##########################################################'
 cd submodules
