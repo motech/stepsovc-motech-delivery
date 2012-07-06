@@ -1,16 +1,14 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>Update Services</h:title>
+		<h:title>Update Services Provided</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="Update Services">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="Update Services Provided">
 					<received_services/>
+					<service_details/>
 					<facility_code/>
 					<service_date/>
-					<other_details>
-						<visit_date/>
-						<service_details/>
-					</other_details>
+					<visit_date/>
 					<other_health_services/>
 					<end_of_life_hospice/>
 					<hiv_counseling/>
@@ -45,11 +43,10 @@
 				</data>
 			</instance>
 			<bind nodeset="/data/received_services"/>
+			<bind nodeset="/data/service_details" type="xsd:string"/>
 			<bind nodeset="/data/facility_code" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003'" jr:constraintMsg="jr:itext('facility_code-constraintMsg')" required="false()"/>
 			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" relevant="/data/facility_code != ''" required="true()"/>
-			<bind nodeset="/data/other_details"/>
-			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" required="true()"/>
-			<bind nodeset="/data/other_details/service_details" type="xsd:string"/>
+			<bind nodeset="/data/visit_date" type="xsd:date" constraint=". &lt;= today()" required="true()"/>
 			<bind nodeset="/data/other_health_services" type="xsd:string" calculate="if(selected(/data/received_services, 'other_health_services'), 'Received', /data/is_other_health_services_na )"/>
 			<bind nodeset="/data/end_of_life_hospice" type="xsd:string" calculate="if(selected(/data/received_services, 'end_of_life_hospice'), 'Received', /data/is_end_of_life_hospice_na)"/>
 			<bind nodeset="/data/hiv_counseling" type="xsd:string" calculate="if(selected(/data/received_services, 'hiv_counseling'), 'Received', /data/is_hiv_counseling_na)"/>
@@ -84,37 +81,37 @@
 			<itext>
 				<translation lang="en" default="">
 					<text id="received_services-label">
-						<value>Received Services</value>
+						<value>Provided Services</value>
 					</text>
 					<text id="referred_services-new_diagnosis-label">
-						<value>001 New diagnosis / pre-ART enrollment, CD4 test</value>
+						<value>001 - New diagnosis / pre-ART enrollment, CD4 test</value>
 					</text>
 					<text id="referred_services-end-of-life_hospice-label">
-						<value>002 End-of-life hospice/hospital admission</value>
+						<value>002 - End-of-life hospice/hospital admission</value>
 					</text>
 					<text id="referred_services-hiv_counseling-label">
-						<value>003 HIV counseling and testing</value>
+						<value>003 - HIV counseling and testing</value>
 					</text>
 					<text id="referred_services-family_planning-label">
-						<value>004 Family Planning</value>
+						<value>004 - Family Planning</value>
 					</text>
 					<text id="referred_services-sexually_transmitted_infection-label">
-						<value>005 Sexually transmitted infection</value>
+						<value>005 - Sexually transmitted infection</value>
 					</text>
 					<text id="referred_services-art_adherence_counseling-label">
-						<value>006 ART adherence counseling</value>
+						<value>006 - ART adherence counseling</value>
 					</text>
 					<text id="referred_services-pain_management-label">
-						<value>007 Pain Management</value>
+						<value>007 - Pain Management</value>
 					</text>
 					<text id="referred_services-pmtct-label">
-						<value>008 PMTCT</value>
+						<value>008 - PMTCT</value>
 					</text>
 					<text id="referred_services-condoms-label">
-						<value>009 Condoms</value>
+						<value>009 - Condoms</value>
 					</text>
 					<text id="referred_services-other_health_service-label">
-						<value>010 Other Health Service or health education</value>
+						<value>010 - Other Health Service or health education</value>
 					</text>
 					<text id="facility_code-label">
 						<value>Alternate Facility Code</value>
@@ -125,14 +122,11 @@
 					<text id="service_date-constraintMsg">
 						<value>Service date cannot be in past</value>
 					</text>
-					<text id="other_details-label">
-						<value>Other Details</value>
-					</text>
 					<text id="visit_date-label">
 						<value>Visit Date*</value>
 					</text>
 					<text id="service_details-label">
-						<value>Service Details</value>
+						<value>Other Service Details</value>
 					</text>
 					<text id="facility_code-constraintMsg">
 						<value>Service Provider ID is invalid</value>
@@ -185,20 +179,17 @@
 				<value>other_health_services</value>
 			</item>
 		</select>
+		<input ref="/data/service_details">
+			<label ref="jr:itext('service_details-label')"/>
+		</input>
 		<input ref="/data/facility_code">
 			<label ref="jr:itext('facility_code-label')"/>
 		</input>
 		<input ref="/data/service_date">
 			<label ref="jr:itext('service_date-label')"/>
 		</input>
-		<group ref="/data/other_details">
-			<label ref="jr:itext('other_details-label')"/>
-			<input ref="/data/other_details/visit_date">
-				<label ref="jr:itext('visit_date-label')"/>
-			</input>
-			<input ref="/data/other_details/service_details">
-				<label ref="jr:itext('service_details-label')"/>
-			</input>
-		</group>
+		<input ref="/data/visit_date">
+			<label ref="jr:itext('visit_date-label')"/>
+		</input>
 	</h:body>
 </h:html>
