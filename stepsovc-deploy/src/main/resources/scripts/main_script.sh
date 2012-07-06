@@ -12,7 +12,7 @@ else
 		rm -rf stepsovc_dest
 	fi
 
-	wget http://nexus.motechproject.org/content/repositories/release/stepsovc-motech-delivery/stepsovc-deploy/1.0/stepsovc-deploy-1.0.jar
+	wget http://nexus.motechproject.org/content/repositories/releases/stepsovc-motech-delivery/stepsovc-deploy/1.0/stepsovc-deploy-1.0.jar
 	mkdir stepsovc_dest
 	cd stepsovc_dest
 	jar -xf ../stepsovc-deploy-1.0.jar
