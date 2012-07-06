@@ -1,0 +1,11 @@
+#!/usr/bin/ruby
+
+#activemq_host=ARGV[0]
+
+if(ret = %x[ps -ef |grep celery]) =~ /celeryd -v 2 -B -s celery -E/
+     puts "Celery  OK"
+     exit(0)
+else
+     puts "Not OK"
+     exit(2)
+end
