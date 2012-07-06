@@ -17,7 +17,7 @@ else
 	cd stepsovc_dest
 	jar -xf ../stepsovc-deploy-0.1-SNAPSHOT.jar
 
-	echo '1. Full Redeploy of stepsovc(clears all db data and redeploys commcare and stepsovc web and runs full migration)'
+	echo '1. Full Redeploy of stepsovc(clears all db data and redeploys commcare-hq and stepsovc web)'
 	echo '2. Stepsovc web redeploy (only war redeploy)'
 	echo '3. Commcare setup'
 	echo '4. Migration only'
