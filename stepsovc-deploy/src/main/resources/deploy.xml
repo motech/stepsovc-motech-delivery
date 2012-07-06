@@ -52,7 +52,7 @@
 
         <download.app.from.remote
                 app.name="${app.name}"
-                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/snapshots/org/wv/stepsovc/stepsovc-web/${nexus.release.version}/stepsovc-web-${nexus.release.version}.war"
+                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/release/org/wv/stepsovc/stepsovc-web/${nexus.release.version}/stepsovc-web-${nexus.release.version}.war"
                 download.dir="${download.dir}"/>
 
         <copy.app.war.to.tomcat
