@@ -7,11 +7,9 @@
     <groupId>stepsovc-motech-delivery</groupId>
     <artifactId>stepsovc-motech-delivery</artifactId>
     <packaging>pom</packaging>
-    <version>$(stepsovc-delivery-version)</version>
+    <version>1.0</version>
     <name>Stepsovc Delivery</name>
-    <properties>
-        <stepsovc-delivery-version>1.0</stepsovc-delivery-version>
-    </properties>
+
     <modules>
         <module>stepsovc-deploy</module>
         <module>commcare-mirror</module>
