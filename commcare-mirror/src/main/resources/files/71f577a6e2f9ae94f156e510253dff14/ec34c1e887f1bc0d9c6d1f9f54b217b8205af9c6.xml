@@ -1,9 +1,9 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
 	<h:head>
-		<h:title>New Referral Form</h:title>
+		<h:title>New Referral</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="New Referral Form">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3E137899-BBE3-4344-A802-5351C681B900" uiVersion="1" version="1" name="New Referral">
 					<referred_services/>
 					<facility_code/>
 					<service_date/>
@@ -51,34 +51,34 @@
 						<value>Refer Services</value>
 					</text>
 					<text id="referred_services-new_diagnosis-label">
-						<value>001 New diagnosis / pre-ART enrollment, CD4 test</value>
+						<value>001 - New diagnosis / pre-ART enrollment, CD4 test</value>
 					</text>
 					<text id="referred_services-end-of-life_hospice-label">
-						<value>002 End-of-life hospice/hospital admission</value>
+						<value>002 - End-of-life hospice/hospital admission</value>
 					</text>
 					<text id="referred_services-hiv_counseling-label">
-						<value>003 HIV counseling and testing</value>
+						<value>003 - HIV counseling and testing</value>
 					</text>
 					<text id="referred_services-family_planning-label">
-						<value>004 Family Planning</value>
+						<value>004 - Family Planning</value>
 					</text>
 					<text id="referred_services-sexually_transmitted_infection-label">
-						<value>005 Sexually transmitted infection</value>
+						<value>005 - Sexually transmitted infection</value>
 					</text>
 					<text id="referred_services-art_adherence_counseling-label">
-						<value>006 ART adherence counseling</value>
+						<value>006 - ART adherence counseling</value>
 					</text>
 					<text id="referred_services-pain_management-label">
-						<value>007 Pain Management</value>
+						<value>007 - Pain Management</value>
 					</text>
 					<text id="referred_services-pmtct-label">
-						<value>008 PMTCT</value>
+						<value>008 - PMTCT</value>
 					</text>
 					<text id="referred_services-condoms-label">
-						<value>009 Condoms</value>
+						<value>009 - Condoms</value>
 					</text>
 					<text id="referred_services-other_health_services-label">
-						<value>010 Other Health Service or health education</value>
+						<value>010 - Other Health Service or health education</value>
 					</text>
 					<text id="facility_code-label">
 						<value>Facility Code*</value>
