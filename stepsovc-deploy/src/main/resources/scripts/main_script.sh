@@ -6,20 +6,20 @@ then
     echo 'Ex:2'
     echo 'sh main_script.sh showcase snapshots 1.0-SNAPSHOT snapshots 1.0-SNAPSHOT'
 else
-	if [ -f stepsovc-deploy-1.0.jar ];
-	then
-		rm -f stepsovc-deploy-1.0.jar
-	fi
+	if [ -f stepsovc-deploy-$3.jar ];
+    then
+            rm -f stepsovc-deploy-$3.jar
+    fi
 
-	if [ -d stepsovc_dest ];
-	then
-		rm -rf stepsovc_dest
-	fi
+    if [ -d stepsovc_dest ];
+    then
+            rm -rf stepsovc_dest
+    fi
 
-	wget http://nexus.motechproject.org/content/repositories/releases/stepsovc-motech-delivery/stepsovc-deploy/1.0/stepsovc-deploy-1.0.jar
-	mkdir stepsovc_dest
-	cd stepsovc_dest
-	jar -xf ../stepsovc-deploy-1.0.jar
+    wget http://nexus.motechproject.org/content/repositories/$2/stepsovc-motech-delivery/stepsovc-deploy/$3/stepsovc-deploy-$3.jar
+    mkdir stepsovc_dest
+    cd stepsovc_dest
+    jar -xf ../stepsovc-deploy-$3.jar
 
     echo '1. Full Redeploy of stepsovc(clears all db data and redeploys commcare-hq and stepsovc web)'
     echo '2. Stepsovc web redeploy (only war redeploy)'
