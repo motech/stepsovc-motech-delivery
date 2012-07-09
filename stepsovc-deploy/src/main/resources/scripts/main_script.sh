@@ -2,9 +2,9 @@ if [ $# -eq 0 ];
 then
 	echo 'Please pass the environment [qa or showcase or prod]'
 else	
-	if [ -f stepsovc-deploy-0.1-SNAPSHOT.jar ];
+	if [ -f stepsovc-deploy-1.0.jar ];
 	then
-		rm -f stepsovc-deploy-0.1-SNAPSHOT.jar
+		rm -f stepsovc-deploy-1.0.jar
 	fi
 
 	if [ -d stepsovc_dest ];
@@ -12,10 +12,10 @@ else
 		rm -rf stepsovc_dest
 	fi
 
-	wget http://nexus.motechproject.org/content/repositories/snapshots/stepsovc-motech-delivery/stepsovc-deploy/0.1-SNAPSHOT/stepsovc-deploy-0.1-SNAPSHOT.jar
+	wget http://nexus.motechproject.org/content/repositories/releases/stepsovc-motech-delivery/stepsovc-deploy/1.0/stepsovc-deploy-1.0.jar
 	mkdir stepsovc_dest
 	cd stepsovc_dest
-	jar -xf ../stepsovc-deploy-0.1-SNAPSHOT.jar
+	jar -xf ../stepsovc-deploy-1.0.jar
 
 	echo '1. Full Redeploy of stepsovc(clears all db data and redeploys commcare-hq and stepsovc web)'
 	echo '2. Stepsovc web redeploy (only war redeploy)'
