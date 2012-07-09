@@ -43,7 +43,6 @@
     </target>
 
 
-
     <target name="deploy.stepsovc.from.nexus">
         <property file="${basedir}/properties/${env}/deploy.properties"/>
         <stop.tomcat
@@ -52,7 +51,7 @@
 
         <download.app.from.remote
                 app.name="${app.name}"
-                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/snapshots/org/wv/stepsovc/stepsovc-web/${nexus.release.version}/stepsovc-web-${nexus.release.version}.war"
+                remote.location="http://${nexus.server}:${nexus.port}/content/repositories/${nexus.repo}/org/wv/stepsovc/stepsovc-web/${nexus.version}/stepsovc-web-${nexus.version}.war"
                 download.dir="${download.dir}"/>
 
         <copy.app.war.to.tomcat
@@ -95,7 +94,7 @@
              classpathref="dependencies"
              password="${postgres.password}"
              autocommit="true"
-          >
+                >
             drop database if exists ${postgres.quartz.db};
             create database ${postgres.quartz.db};
         </sql>
@@ -106,7 +105,7 @@
              password="${postgres.password}"
              src="./sql/quartz.sql"
              autocommit="true"
-             >
+                >
 
         </sql>
 

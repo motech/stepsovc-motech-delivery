@@ -14,18 +14,18 @@ python ~/projects/commcare-hq/manage.py add_commcare_build ~/projects/artifacts.
 
 cd ~/bootstepsovc
 
-if [ -f commcare-mirror-1.0.jar ];
+if [ -f commcare-mirror-$3.jar ];
 then
-	rm -f commcare-mirror-1.0.jar
+	rm -f commcare-mirror-$3.jar
 fi
 
 if [ -d commcare_mirror_dest ];
 then
 	rm -rf commcare_mirror_dest
 fi
-wget http://nexus.motechproject.org/content/repositories/releases/stepsovc-motech-delivery/commcare-mirror/1.0/commcare-mirror-1.0.jar
+wget http://nexus.motechproject.org/content/repositories/$2/stepsovc-motech-delivery/commcare-mirror/$3/commcare-mirror-$3.jar
 mkdir commcare_mirror_dest
 cd commcare_mirror_dest
-jar -xf ../commcare-mirror-1.0.jar
+jar -xf ../commcare-mirror-$3.jar
 ant mirror.commcare.db
 cd ..
