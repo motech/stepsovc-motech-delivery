@@ -1,4 +1,3 @@
-mv -f /var/lib/couchdb/commcarehq.couch /var/lib/couchdb/commcarehq.couch_bkp
 curl -X DELETE http://localhost:5984/commcarehq
 psql -U postgres -f ~/bootstepsovc/stepsovc_dest/sql/dbrecreate.sql
 
