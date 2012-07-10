@@ -75,7 +75,8 @@ cat requirements.txt | sed s/lxml==2.3/lxml==2.2.3/ > temp
 cat temp > requirements.txt
 rm -f temp
 pip install -r requirements.txt
-cp ~/bootstepsovc/stepsovc_dest/js/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner/map.js
+cp ~/bootstepsovc/stepsovc_dest/js/owner/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner/map.js
+cp ~/bootstepsovc/stepsovc_dest/js/owner_lite/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner_lite/map.js
 cp localsettings.example.py localsettings.py
 
 echo '##########################################################'
