@@ -7,10 +7,10 @@ function (doc) {
         if (doc.owner_id) {
             var owner_ids = doc.owner_id.toString().split(",");
             for (var i in owner_ids) {
-                emit([owner_ids[i], doc.closed], null);
+                emit([owner_ids[i], doc.closed], doc2);
             }
         } else {
-            emit([doc.user_id, doc.closed], null);
+            emit([doc.user_id, doc.closed], doc2);
         }
     }
 }

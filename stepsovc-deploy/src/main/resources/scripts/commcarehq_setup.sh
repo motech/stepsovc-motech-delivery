@@ -83,6 +83,8 @@ echo '##########################################################'
 cd submodules
 git clone git://github.com/dimagi/django-cpserver.git
 pip install cherrypy
+yum install memcached.x86_64 php-pecl-memcache.x86_64
+cat memcached > /etc/sysconfig/memcached
 
 echo '##############################################################################################################'
 echo '#########################################     DO THE FOLLOWING       #########################################'
