@@ -7,5 +7,6 @@ mv javassist-3.0.jar javassist.jar
 javac -classpath .:javassist.jar ClassModifier.java
 java -cp .:javassist.jar  ClassModifier
 jar -uf $JAVA_HOME/jre/lib/rt.jar  java/
+jar -uf $JAVA_HOME/jre/lib/rt.jar  java/
 javac -bootclasspath .:$JAVA_HOME/jre/lib/rt.jar -cp . Test.java
 java -cp . Test
