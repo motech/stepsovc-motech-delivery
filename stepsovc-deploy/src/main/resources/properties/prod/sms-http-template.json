@@ -1,0 +1,16 @@
+{
+    "outgoing":{
+        "request":{
+            "urlPath":"https://196.12.12.185/zorilla2.0/modules/wv/wv.hei",
+            "type":"POST",
+            "recipientsSeparator":"-",
+            "bodyParameters":{
+                "to":"$recipients",
+                "msg":"$message"
+            }
+        },
+        "response":{
+            "success":"success"
+        }
+    }
+}

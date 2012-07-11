@@ -160,6 +160,11 @@
                   file="${basedir}/properties/${env}/quartz.properties"/>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
                   file="${basedir}/properties/${env}/sms.properties"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/sms-http-template.json"/>
+            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
+                  file="${basedir}/properties/${env}/sms-http.properties"/>
+
         </sequential>
     </macrodef>
 
