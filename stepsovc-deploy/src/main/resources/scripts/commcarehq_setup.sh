@@ -75,6 +75,7 @@ cat requirements.txt | sed s/lxml==2.3/lxml==2.2.3/ > temp
 cat temp > requirements.txt
 rm -f temp
 pip install -r requirements.txt
+cp ~/bootstepsovc/stepsovc_dest/stepsovc-keystore ~/projects/commcare-hq/
 cp ~/bootstepsovc/stepsovc_dest/js/owner/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner/map.js
 cp ~/bootstepsovc/stepsovc_dest/js/owner_lite/map.js ~/projects/commcare-hq/submodules/casexml-src/casexml/apps/case/_design/views/by_owner_lite/map.js
 cp localsettings.example.py localsettings.py
@@ -88,7 +89,14 @@ cat memcached > /etc/sysconfig/memcached
 
 echo '##############################################################################################################'
 echo '#########################################     DO THE FOLLOWING       #########################################'
-echo 'comment JAR SIGN settings in localsettings.py'
+echo 'Add JAR SIGN settings in localsettings.py as follows'
+echo 'JAR_SIGN = dict('
+echo '    jad_tool = os.path.join(_ROOT_DIR, "submodules", "core-hq-src", "corehq", "apps", "app_manager", "JadTool.jar"),'
+echo '    key_store = "stepsovc-keystore", #os.path.join(os.path.dirname(os.path.dirname(_ROOT_DIR)), "DimagiKeyStore"),'
+echo '    key_alias = "stepsovc-alias", #"javarosakey",'
+echo '    store_pass = "stepsovc",'
+echo '    key_pass = "stepsovc",'
+echo ')'
 echo 'add django_cpserver to INSTALLED_APPS in settings.py'
 echo 'Set LUCENE_ENABLED to True in settings.py'
 echo 'add django-cpserver to sys path in manage.py'
