@@ -1,0 +1,16 @@
+{
+    "outgoing":{
+        "request":{
+            "urlPath":"http://localhost:8080/stepsovc/motech-delivery-tools/outbound",
+            "type":"POST",
+            "recipientsSeparator":"-",
+            "bodyParameters":{
+                "to":"$recipients",
+                "msg":"$message"
+            }
+        },
+        "response":{
+            "success":"success"
+        }
+    }
+}
