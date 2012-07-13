@@ -145,7 +145,7 @@
         <copy todir="${nagios.home}/libexec">
             <fileset dir="${basedir}/nagios/plugins" />
         </copy>
-        <copy todir="${nagios.home}/objects">
+        <copy todir="${nagios.home}/etc/objects">
             <fileset dir="${basedir}/nagios/objects"/>
         </copy>
     </target>
