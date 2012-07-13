@@ -140,6 +140,16 @@
         <echo message="recreated schema for ${postgres.aggregator.db}"/>
     </target>
 
+    <target name="deploy-nagios-scripts">
+        <copy todir="${nagios.home}/libexec">
+            <fileset dir="${basedir}/nagios/plugins" />
+        </copy>
+        <copy todir="${nagios.home}/objects">
+            <fileset dir="${basedir}/nagios/objects"/>
+        </copy>
+    </target>
+
+
     <macrodef name="copy.over.properties">
         <sequential>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
