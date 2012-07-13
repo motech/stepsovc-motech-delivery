@@ -141,12 +141,18 @@
     </target>
 
     <target name="deploy-nagios-scripts">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
         <copy todir="${nagios.home}/libexec">
             <fileset dir="${basedir}/nagios/plugins" />
         </copy>
         <copy todir="${nagios.home}/objects">
             <fileset dir="${basedir}/nagios/objects"/>
         </copy>
+    </target>
+
+    <target name="redeploy-all-properties">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
+       <copy.over.properties/>
     </target>
 
 
