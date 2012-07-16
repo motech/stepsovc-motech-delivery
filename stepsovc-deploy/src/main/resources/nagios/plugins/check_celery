@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-if(ret = %x[ps -ef |grep celery]) =~ /celeryd -v 2 -B -s celery -E/
+if(ret = %x[ps -ef |grep celery]) =~ /manage.py celeryd/
      puts "Celery  OK"
      exit(0)
 else
