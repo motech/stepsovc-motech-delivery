@@ -54,22 +54,11 @@ cd /usr/local/src/nagios-plugins-1.4.15
 make
 make install
 
-echo "***** Starting Nagios"
-chkconfig --add nagios
-chkconfig nagios on
-service nagios start
 
-echo "***** Nagios Installation Done: " `date`
-
-echo  "****Installing  Sar  utility  for  CPU usage check"
-echo "****Install crontabs*******"
-yum install crontabs
-echo "*****Install  SAR *****"
-rpm -ivh ftp://mirror.switch.ch/pool/3/mirror/centos/6.2/os/x86_64/Packages/sysstat-9.0.4-18.el6.x86_64.rpm
 echo "---- Changing  Ownership--"
 sudo chown --reference=/var/www/cgi-bin -R /usr/local/nagios/sbin
 echo "---- Changing  Ownership done--"
-ant -f ../deploy.xml -Denv=$1 deploy-nagios-scripts
+ant -f stepsovc_dest/deploy.xml -Denv=$1 deploy-nagios-scripts
 echo 'Please hit enter and change alias name and IP in localhost.cfg'
 read opt
 vi /usr/local/nagios/etc/objects/localhost.cfg
@@ -82,4 +71,36 @@ echo "******Enter nagios admin password******"
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 echo "*****Password set for username 'nagiosadmin'********"
 
+
+echo  "****Installing  Sar  utility  for  CPU usage check"
+echo "****Install crontabs*******"
+yum install crontabs
+echo "*****Install  SAR *****"
+rpm -qa |grep sysstat-9.0.4-18.el6.x86_64>'$var'
+if [ $var =="sysstat-9.0.4-18.el6.x86_64" ]
+then
+echo 'SAR already installed'
+else
+rpm -ivh ftp://mirror.switch.ch/pool/3/mirror/centos/6.2/os/x86_64/Packages/sysstat-9.0.4-18.el6.x86_64.rpm
+fi
+echo "*****SAR  Installed*****"
+
+
+echo "HTTP  Configuration for  NAGIOS"
+echo "Stopping HTTPD ..."
+service httpd stop
+echo "Add  (ProxyPass /nagios !) entry   to  HTTPD - **************"
+echo "Please  hit  enter to  Add"
+read opt
+vi /etc/httpd/conf/httpd.conf
+echo "Starting HTTPD ..."
+service httpd start
+
+
+echo "***** Starting Nagios"
+chkconfig --add nagios
+chkconfig nagios on
+service nagios start
+
+echo "***** Nagios Installation Done: " `date`
 

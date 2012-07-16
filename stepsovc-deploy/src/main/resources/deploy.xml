@@ -142,10 +142,10 @@
 
     <target name="deploy-nagios-scripts">
         <property file="${basedir}/properties/${env}/deploy.properties"/>
-        <copy todir="${nagios.home}/libexec">
+        <copy overwrite="true" todir="${nagios.home}/libexec">
             <fileset dir="${basedir}/nagios/plugins" />
         </copy>
-        <copy todir="${nagios.home}/etc/objects">
+        <copy overwrite="true" todir="${nagios.home}/etc/objects">
             <fileset dir="${basedir}/nagios/objects"/>
         </copy>
     </target>
