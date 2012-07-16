@@ -62,6 +62,9 @@ ant -f stepsovc_dest/deploy.xml -Denv=$1 deploy-nagios-scripts
 echo 'Please hit enter and change alias name and IP in localhost.cfg'
 read opt
 vi /usr/local/nagios/etc/objects/localhost.cfg
+echo "--Add   execute access to the new  plugins--"
+chmod g+x,u+x,o+x /usr/local/nagios/libexec/*
+chmod g+x,u+x,o+x /usr/local/nagios/etc/objects/*
 echo *******set  enforcing to permissive **************
 setenforce 0
 echo 'Please hit enter and set SELINUX=permissive'

@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 
-if(ret = %x[ps -ef |grep cpserver]) =~ / python ./manage.py runcpserver /
+if(ret = %x[ps -ef |grep cpserver]) =~ /manage.py runcpserver/
      puts "CommcareHQ  OK"
      exit(0)
 else
