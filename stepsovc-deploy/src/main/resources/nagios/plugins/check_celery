@@ -4,6 +4,6 @@ if(ret = %x[ps -ef |grep celery]) =~ /manage.py celeryd/
      puts "Celery  OK"
      exit(0)
 else
-     puts "Not OK"
+     puts "Celery Not Running"
      exit(2)
 end
