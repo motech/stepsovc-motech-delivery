@@ -25,6 +25,7 @@ else
     echo '2. Stepsovc web redeploy (only war redeploy)'
     echo '3. Commcare setup'
     echo '4. Migration only'
+    echo '5. Install Nagios from scratch'
 
     read opt
 
@@ -49,5 +50,11 @@ else
     then
             cd scripts
             sh migration_full.sh $1 > ~/bootstepsovc/migration.log
+    fi
+
+    if [ $opt -eq 5 ];
+    then
+                cd scripts
+                sh nagios_setup.sh $1
     fi
 fi

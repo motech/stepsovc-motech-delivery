@@ -6,6 +6,12 @@ set -e
 # Treat Unset Variables As Errors
 set -u
 
+echo "**********install make**********"
+yum -y install gcc automake autoconf libtool make
+
+echo "**************Install mail *******************"
+yum install  mailx
+
 echo "***** Starting Nagios Quick-Install: " `date`
 echo "***** Installing pre-requisites"
 yum -y install httpd
@@ -53,4 +59,27 @@ chkconfig --add nagios
 chkconfig nagios on
 service nagios start
 
-echo "***** Done: " `date`
+echo "***** Nagios Installation Done: " `date`
+
+echo  "****Installing  Sar  utility  for  CPU usage check"
+echo "****Install crontabs*******"
+yum install crontabs
+echo "*****Install  SAR *****"
+rpm -ivh ftp://mirror.switch.ch/pool/3/mirror/centos/6.2/os/x86_64/Packages/sysstat-9.0.4-18.el6.x86_64.rpm
+echo "---- Changing  Ownership--"
+sudo chown --reference=/var/www/cgi-bin -R /usr/local/nagios/sbin
+echo "---- Changing  Ownership done--"
+ant -f ../deploy.xml -Denv=$1 deploy-nagios-scripts
+echo 'Please hit enter and change alias name and IP in localhost.cfg'
+read opt
+vi /usr/local/nagios/etc/objects/localhost.cfg
+echo *******set  enforcing to permissive **************
+setenforce 0
+echo 'Please hit enter and set SELINUX=permissive'
+read opt
+vi /etc/selinux/config
+echo "******Enter nagios admin password******"
+htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+echo "*****Password set for username 'nagiosadmin'********"
+
+

@@ -1,11 +1,10 @@
 #!/usr/bin/ruby
 
-commcarehq_server_host=ARGV[0]
 
-if(ret = %x[curl http://#{commcarehq_server_host}:8000/]) =~ /Welcome/
-        puts "CommcareHQ OK"
-        exit(0)
+if(ret = %x[ps -ef |grep cpserver]) =~ / python ./manage.py runcpserver /
+     puts "CommcareHQ  OK"
+     exit(0)
 else
-        puts "'curl http://#{commcarehq_server_host}:8000' returned #{ret.strip}"
-        exit(2)
+     puts "CommcareHQ Not Running"
+     exit(2)
 end
