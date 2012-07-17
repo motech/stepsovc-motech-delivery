@@ -49,13 +49,13 @@ chkconfig  --level 6  couchdb off
 
 echo "Adding  Nagios to startup"
 
-chkconfig  --level 0  nagios off
-chkconfig  --level 1  nagios off
-chkconfig  --level 2  nagios off
-chkconfig  --level 3  nagios off
-chkconfig  --level 4  nagios off
-chkconfig  --level 5  nagios off
-chkconfig  --level 6  nagios off
+chkconfig  --level 0  nagios on
+chkconfig  --level 1  nagios on
+chkconfig  --level 2  nagios on
+chkconfig  --level 3  nagios on
+chkconfig  --level 4  nagios on
+chkconfig  --level 5  nagios on
+chkconfig  --level 6  nagios on
 
 
 
