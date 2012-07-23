@@ -87,6 +87,9 @@ pip install cherrypy
 yum install memcached.x86_64 php-pecl-memcache.x86_64
 cat memcached > /etc/sysconfig/memcached
 
+cp ~/bootstepsovc/stepsovc_dest/init/celeryd /etc/init.d/
+cp ~/bootstepsovc/stepsovc_dest/default_conf/celeryd /etc/default/
+
 echo '##############################################################################################################'
 echo '#########################################     DO THE FOLLOWING       #########################################'
 echo 'Add JAR SIGN settings in localsettings.py as follows'
