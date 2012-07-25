@@ -83,6 +83,34 @@
     </target>
 
 
+    <target name="deploy.stepsovc.from.local">
+        <property file="${basedir}/properties/${env}/deploy.properties"/>
+        <stop.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+        <copy.app.war.to.tomcat
+                tomcat.home="${tomcat.home}"
+                app.name="${app.name}"
+                download.dir="${download.dir}"/>
+
+        <start.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+        <copy.over.properties/>
+
+        <restart.tomcat
+                tomcat.home="${tomcat.home}"
+                tomcat.port="${tomcat.port}"/>
+
+    </target>
+
+
+    <target name="recreatedb.and.deploy.stepsovc.from.local" depends="load.quartz.schema,load.aggregator.schema">
+        <antcall target="deploy.stepsovc.from.local"></antcall>
+    </target>
+
     <target name="load.quartz.schema">
         <path id="dependencies">
             <fileset file="./lib/postgresql-9.1-901.jdbc4.jar"/>
