@@ -6,6 +6,6 @@ ant -f migrate.xml migrate.caregiver -Denv=$1 -Dmigration.files.root=/root/boots
 ant -f migrate.xml migrate.beneficiary -Denv=$1 -Dmigration.files.root=/root/bootstepsovc/stepsovc_dest/csv
 ant -f migrate.xml migrate.caregiver.phonenumber -Denv=$1 -Dmigration.files.root=/root/bootstepsovc/stepsovc_dest/csv
 ant -f migrate.xml migrate.facility.phonenumber -Denv=$1 -Dmigration.files.root=/root/bootstepsovc/stepsovc_dest/csv
-ant -f migrate.xml create.case
+ant -f migrate.xml create.case -Denv=$1
 echo "ended  migration at"
 date
