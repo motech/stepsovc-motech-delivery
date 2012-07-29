@@ -2,7 +2,7 @@ if [ $# -ne 2 ];
 then
     echo 'Please pass the env and csv file  path'
     echo 'Ex:1'
-    echo 'sh migration.sh qa /root/projects/migration'
+    echo 'sh migration.sh prod /root/projects/migration'
 else
     echo 'Choose any of the  below to  start  migration'
     echo '1.Update Caregiver phonenumber and Facility'
