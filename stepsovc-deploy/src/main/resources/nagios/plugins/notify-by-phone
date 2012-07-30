@@ -1,0 +1,16 @@
+#!/bin/bash
+
+alert_message=$1
+ENV="production"
+phone_numbers="260978421223 260978218275"
+
+sendSMS() {
+  for phone in $phone_numbers; {
+    echo "sending msg to $phone";
+    curl -d "to=$phone&msg=$alert_message" https://196.12.12.185/zorilla2.0/modules/wv/wv.hei -k
+  }
+}
+
+echo "$alert_message"
+sendSMS $alert_message
+

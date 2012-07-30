@@ -57,5 +57,15 @@ chkconfig  --level 4  nagios on
 chkconfig  --level 5  nagios on
 chkconfig  --level 6  nagios on
 
+echo "Adding  memcached to startup"
+
+chkconfig  --level 0  memcached on
+chkconfig  --level 1  memcached on
+chkconfig  --level 2  memcached on
+chkconfig  --level 3  memcached on
+chkconfig  --level 4  memcached on
+chkconfig  --level 5  memcached on
+chkconfig  --level 6  memcached on
+
 
 

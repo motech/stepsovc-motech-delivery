@@ -22,10 +22,11 @@ else
 	jar -xf ../stepsovc-deploy-$3.jar
 
     echo '1. Full Redeploy of stepsovc(clears all db data and redeploys commcare-hq and stepsovc web)'
-    echo '2. Stepsovc web redeploy (only war redeploy)'
+    echo '2. Stepsovc web redeploy- Nexus (only war redeploy)'
     echo '3. Commcare setup'
     echo '4. Migration only'
     echo '5. Install Nagios from scratch'
+    echo '6. Stepsovc web redeploy - local
 
     read opt
 
@@ -57,4 +58,8 @@ else
                 cd scripts
                 sh nagios_setup.sh $1
     fi
+     if [ $opt -eq 6 ];
+        then
+                ant -f deploy.xml -Denv=$1 -Dnexus.repo=$4 -Dnexus.version=$5 deploy.stepsovc.from.local
+        fi
 fi

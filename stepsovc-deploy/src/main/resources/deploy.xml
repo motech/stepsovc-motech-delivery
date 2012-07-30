@@ -92,7 +92,7 @@
         <copy.app.war.to.tomcat
                 tomcat.home="${tomcat.home}"
                 app.name="${app.name}"
-                download.dir="${download.dir}"/>
+                download.dir="${local.war.dir}"/>
 
         <start.tomcat
                 tomcat.home="${tomcat.home}"
@@ -188,8 +188,6 @@
         <sequential>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
                   file="${basedir}/properties/${env}/couchdb.properties"/>
-            <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
-                  file="${basedir}/properties/${env}/log4j.xml"/>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
                   file="${basedir}/properties/${env}/activemq.properties"/>
             <copy overwrite="true" todir="${tomcat.home}/webapps/${app.name}/WEB-INF/classes"
