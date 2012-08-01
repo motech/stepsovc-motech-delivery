@@ -27,7 +27,7 @@
 				</data>
 			</instance>
 			<bind nodeset="/data/referred_services"/>
-			<bind nodeset="/data/facility_code" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003' or . = 'FAC004' or . = 'FAC005' or . = 'FAC006' or . = 'FAC007'" jr:constraintMsg="jr:itext('facility_code-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/facility_code" type="xsd:string" constraint=". = 'FAC001' or . = 'FAC002' or . = 'FAC003' or . = 'FAC004' or . = 'FAC005' or . = 'FAC006' or . = 'FAC007' or . = 'TESTFAC1'" jr:constraintMsg="jr:itext('facility_code-constraintMsg')" required="true()"/>
 			<bind nodeset="/data/service_date" type="xsd:date" constraint=". &gt;= today()" jr:constraintMsg="jr:itext('service_date-constraintMsg')" required="true()"/>
 			<bind nodeset="/data/other_details"/>
 			<bind nodeset="/data/other_details/visit_date" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('visit_date-constraintMsg')" required="true()"/>
