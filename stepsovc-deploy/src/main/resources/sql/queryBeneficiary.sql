@@ -1,6 +1,6 @@
 select
 ben.ben_id as beneficiaryId , ben.ben_code as beneficiaryCode,
-ben.ben_first_name as beneficiaryName ,
+ben.ben_first_name as beneficiaryName , ben.ben_last_name as beneficiaryLastName
 convert(varchar(10), ben.ben_dob, 120)as beneficiaryDob,
 '' as receivingOrganization ,
  CASE cg_gender
