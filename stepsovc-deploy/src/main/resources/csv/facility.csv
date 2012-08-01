@@ -1,4 +1,5 @@
 facilityCode,facilityName,village,ward,constituency,district,mandatoryPhoneNumber,optionalPhoneNumber1,optionalPhoneNumber2,optionalPhoneNumber3
+TESTFAC1,Test Facility001,,,,,,,,
 FAC001,Chalimbana RHC,Chalimbana,Chalimbana,Chalimbana,,,,,
 FAC002,Kabeleka RHC,Kabeleka,Kabeleka,Kabeleka,,,,,
 FAC003,Kampekete RHC,Kampekete,Kampekete,Kampekete,,,,,

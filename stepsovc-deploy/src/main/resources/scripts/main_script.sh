@@ -2,7 +2,7 @@ if [ $# -eq 0 ];
 then
     echo 'Please pass the environment[qa or showcase or prod, steps-ovc deploy repository[releases or snapshots] and version, steps-ovc repository and version'
     echo 'Ex:1'
-    echo 'sh main_script.sh qa releases 1.1 releases 1.0'
+    echo 'sh main_script.sh qa releases 0.10 releases 0.10'
     echo 'Ex:2'
     echo 'sh main_script.sh showcase snapshots 1.0-SNAPSHOT snapshots 1.0-SNAPSHOT'
 else
