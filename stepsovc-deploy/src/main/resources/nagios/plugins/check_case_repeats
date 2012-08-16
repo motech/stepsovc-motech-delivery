@@ -1,0 +1,17 @@
+#!/bin/bash
+
+total_rows=$(curl http://localhost:5984/commcarehq/_design/receiverwrapper/_view/repeat_records_by_next_check | jsawk 'if(this.rows.length > 0)return this.rows[0].value; else return 0;')
+
+if [ $total_rows -ge 10 ];
+then
+        echo "Case Repeater : CRITICAL - $total_rows forms with pending repeat"
+        exit 2
+elif [ $total_rows -ge 1 ];
+then
+        echo "Case Repeater : WARNING - $total_rows forms with pending repeat"
+        exit 1
+
+else
+        echo 'Case Repeater : OK - No forms with pending repeat'
+        exit 0
+fi
