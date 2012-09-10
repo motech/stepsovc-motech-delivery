@@ -59,7 +59,9 @@ if [ -d ~/projects/commcare-hq ];
 then
      echo '********************compare-hq root exists*****************'
 else
-     git clone https://github.com/dimagi/commcare-hq.git ~/projects/commcare-hq
+     git clone git@github.com:tsathishkumar/commcare-hq.git ~/projects/commcare-hq
+     cd ~/projects/commcare-hq
+     git checkout steps-ovc
 fi
 
 if [ -f ~/projects/artifacts.zip ];
